@@ -1,0 +1,149 @@
+//
+// _variable.scss
+//
+
+// color
+$light: #dcddde; // K15
+$light-50: rgba(220,220,220,.5);
+$gray: #c9caca; // $writer-light, $member-light
+$gray-dark: #58595b; // K80, rgba(88,88,88,1)
+$dark: #494342; // $writer-dark, $member-dark
+
+// theme color
+// 首頁
+$home: #d63845;
+$home-light: #fbdad1;
+$home-dark: #b01c32;
+// 心理測驗
+$test: #85656d;
+$test-light: #f6ece6;
+$test-btn-light: #debaa8;
+// $test-dark: #403040; // cmyk color
+$test-dark: #3e3342; // rgb color
+// 電子書
+$ebook: #4a8f81;
+$ebook-light: #c2e3da;
+$ebook-dark: #004f4f;
+// 線上課程
+$course: #b48534;
+$course-light: #ead9a5;
+$course-dark: #764932; // rgba(118,73,50,1)
+// 文章
+$article: #3a5778;
+$article-light: #a5bbcb;
+$article-dark: #0a2d48;
+// 實體活動
+$activity: #d66c48;
+$activity-light: #facea7;
+$activity-dark: #7a1b0e;
+// 作者專區
+$writer: $gray-dark;
+$writer-light: $gray;
+$writer-dark: $dark;
+// 日記本
+$diary: #a0aa58;
+$diary-light: #d5dabc;
+$diary-dark: #3c4f25;
+$diary-green: #a3c275;
+$diary-green-light: #dbe6b5;
+// 會員專區
+$member: $gray-dark;
+$member-light: $gray;
+$member-dark: $dark;
+
+
+// colors
+$theme-colors: (
+  "home":        $home,
+  "test":        $test,
+  "ebook":      $ebook,
+  "course":       $course,
+  "article":      $article,
+  "activity":        $activity,
+  "writer":        $writer,
+  "diary":        $diary,
+  "member":        $member
+);
+
+$theme-lights: (
+  "home-light":        $home-light,
+  "test-light":        $test-light,
+  "ebook-light":      $ebook-light,
+  "course-light":       $course-light,
+  "article-light":      $article-light,
+  "activity-light":        $activity-light,
+  "writer-light":        $writer-light,
+  "diary-light":        $diary-light,
+  "member-light":        $member-light,
+  "cart-light":        $member-light,
+);
+
+$theme-darks: (
+  "home-dark":        $home-dark,
+  "test-dark":        $test-dark,
+  "ebook-dark":      $ebook-dark,
+  "course-dark":       $course-dark,
+  "article-dark":      $article-dark,
+  "activity-dark":        $activity-dark,
+  "writer-dark":        $writer-dark,
+  "diary-dark":        $diary-dark,
+  "member-dark":        $member-dark
+);
+
+$theme-btn-lights: (
+  "home-light":        $home-light,
+  "test-light":        $test-btn-light,
+  "ebook-light":      $ebook-light,
+  "course-light":       $course-light,
+  "article-light":      $article-light,
+  "activity-light":        $activity-light,
+  "writer-light":        $writer-light,
+  "diary-light":        $diary-light,
+  "member-light":        rgba(88,88,88,.5)
+);
+
+$theme-btn-text-lights: (
+  "home-light":        $home-dark,
+  "test-light":        $test,
+  "ebook-light":      $ebook-dark,
+  "course-light":       $course-dark,
+  "article-light":      $article,
+  "activity-light":        $activity-dark,
+  "writer-light":        $writer-dark,
+  "diary-light":        $diary-dark,
+  "member-light":        $member-dark
+);
+
+
+// fb
+$fb-color: #5067ae;
+
+
+// font
+$font-color: $gray-dark;
+$font-light: $light;
+$font-gray: darken($gray, 20%);
+$font-dark: $dark;
+
+// $font-family: Circular,"Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+// $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family: helvetica neue,Helvetica,Arial,'PingFang TC',微軟正黑體,'Microsoft JhengHei',sans-serif;
+// $font-family: helvetica neue,helvetica,arial,sans-serif;
+
+// border
+$border-color: $light;
+$border-gray: $gray;
+$border-dark: $gray-dark;
+
+// transition
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+
+
+
+
+
+
+
+
+

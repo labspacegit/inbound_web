@@ -1,0 +1,37 @@
+//
+// _avatar.scss
+//
+
+.avatar{
+	@include background-cover();
+	display: flex;
+	margin-right: 0.5rem;
+	border-radius: 100%;
+	border: 1px solid currentColor;
+	background-color: $light;
+	&.avatar-sm{
+		@include size(30px);
+	}
+	&.avatar-md{
+		@include size(50px);
+	}
+	&.avatar-lg{
+		@include size(54px);
+		margin-right: 0.75rem;
+		@include breakpoint(md){
+			@include size(64px);
+		}
+	}
+	&.avatar-xl{
+		@include size(120px);
+	}
+	&.avatar-xxl{
+		@include size(140px);
+	}
+	&.avatar-writer{
+		width: 100%;
+		padding-bottom: 100%;
+	}
+}
+
+

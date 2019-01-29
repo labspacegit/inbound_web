@@ -1,0 +1,222 @@
+//
+// Navbar
+//
+
+// header
+.theme-writer-read{
+	color: $writer-light;
+}
+// 修正讀取關於作者頁面時主選單無法高亮問題
+.d-none.active + .nav-item > .nav-link{
+	background-color: $writer-dark;
+}
+
+// 修正fixed後與content重疊問題
+.header-fixed-block{
+	position: relative;
+	height: 50px;
+	@include breakpoint(lg){
+		height: 110px;
+	}
+}
+
+.navbar{
+	// padding: 0 1.5rem;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+// global navbar
+.navbar-gnb{
+	z-index: 1000;
+	height: 50px;
+	background-color: currentColor;
+	@include breakpoint(lg){
+		height: 70px;
+		padding-top: 1rem;
+	}
+	
+	// toggler
+	.navbar-toggler{
+		margin-left: -6px;
+		margin-bottom: 0;
+		padding: 0;
+		.navbar-toggler-icon{
+			display: flex;
+			align-items: center;
+			@include size(auto);
+			font-size: 2rem;
+			color: $font-color;
+			[data-icon]{
+				top: 2px;
+			}
+		}
+	}
+
+	// brand logo
+	.brand-logo{
+		@include size(50px);
+		margin-right: 0.25rem;
+		background: currentColor url(/assets/img/brand_logo.png) 50% 50% / cover no-repeat;
+		color: inherit;
+		@include breakpoint(lg){
+			@include size(110px);
+			display: flex;
+			align-self: flex-start;
+			margin-top: -1rem;
+			margin-right: 1rem;
+		}
+	}
+	// brand title
+	.navbar-brand{
+		@include breakpoint(lg){
+			font-size: 1.5rem;
+		}
+	}
+
+	// collapse
+	.navbar-collapse{
+		justify-content: flex-end;
+	}
+
+	// navbar nav
+	.nav-item{
+		display: flex;
+		align-items: center;
+		position: relative;
+		&:first-child, &:last-child{
+			&:after{
+				content: "";
+			}
+		}
+		&:after{
+			position: absolute;
+			right: -2px;
+			content: "|";
+			margin-top: -1px;
+			opacity: 0.3;
+		}
+		.nav-link{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding-left: 0.75rem !important;
+			padding-right: 0.75rem !important;
+			background: none;
+			border: none;
+		}
+		.avatar{
+			border: 0;
+		}
+	}
+}
+
+// local navbar
+.navbar-lnb{
+	padding: 0;
+	background-color: #fff;
+
+	// navbar nav
+	.navbar-nav{
+		@include breakpoint(lg){
+			margin-left: 127px;
+		}
+		.nav-item{
+			@include breakpoint(lg){
+				margin: 0 1px;
+				min-width: 100px;
+			}
+		}
+		.nav-link{
+			padding: 1rem 1.25rem;
+			transition: $btn-transition;
+			@include breakpoint(lg){
+				padding: 0.5rem 1rem;
+				text-align: center;
+			}
+		}
+		.nav-link-userinfo{
+			display: flex;
+			align-items: center;
+			.avatar{
+				margin-right: 0.75rem;
+			}
+		}
+	}
+}
+
+// mobile header
+.navbar-header-mobile{
+	display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+	.navbar-brand{
+		display: flex;
+		align-items: center;
+		margin-right: 0;
+	}
+	.navbar-nav{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		.nav-link{
+			position: relative;
+			display: flex;
+			padding: 0;
+			background-color: transparent;
+			&.icon-cart{
+				[data-icon]{
+					top: 0;
+					font-size: 1.3rem;
+				}
+			}
+		}
+	}
+}
+
+// overlay
+.navbar-overlay{
+	// mobile
+	@media (max-width: 991px){
+		@include fixed(top 0 left 0);
+		@include size();
+		cursor: pointer;
+	  z-index: 1011;
+	  visibility: hidden;
+	  opacity: 0;
+	  transition: opacity .2s ease-out;
+	  background-color: rgba(41,41,41,0.55);
+	  &.show{
+	  	visibility: visible;
+	    opacity: 1;
+	  }
+	}
+}
+
+// nav link bg colors
+@each $color, $value in $theme-btn-lights {
+  .nav-link-#{$color} {
+  	color: #fff;
+  	background-color: #{$value};
+  	&:hover{
+  		color: #fff;
+  		background-color: darken($value, 10%);
+  	}
+  }
+}
+
+// nav link active colors
+@each $color, $value in $theme-colors {
+	.nav-item.active{
+		.nav-link-#{$color}-light {
+			background-color: $value;
+		}
+	}
+}
+
+
+
+
+

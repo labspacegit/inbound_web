@@ -1,0 +1,19 @@
+//
+// _avatar.scss
+//
+
+.avatar{
+	@include size(30px);
+	@include background-cover();
+	display: flex;
+	flex: 0 0 30px;
+	margin-right: 0.5rem;
+	border-radius: 100%;
+	border: 1px solid currentColor;
+	&.avatar-lg{
+		@include size(50px);
+		flex: 0 0 50px;
+	}
+}
+
+

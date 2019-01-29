@@ -1,0 +1,121 @@
+// 
+// Forms
+// 
+
+.form-control{
+	color: $font-color;
+	border-radius: 2px;
+	border: 1px solid $border-color;
+}
+
+.form-control-plaintext{
+	color: $font-color;
+}
+
+// 上傳檔案
+.custom-file-input:lang(en) ~ .custom-file-label::after{
+	content: "瀏覽";
+}
+.custom-file-label{
+	border: 1px solid $border-color;
+	border-radius: 2px;
+}
+
+// input group append
+.input-group-append{
+	.btn{
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+	}
+}
+.input-group-text{
+	border-radius: 2px;
+}
+
+// custom forms
+.custom-control-input,
+.custom-control-label{
+	cursor: pointer;
+}
+// 文字顏色
+.custom-control-label{
+	color: $font-color;
+	&:hover{
+		color: $font-dark;
+	}
+}
+// radio顏色調整
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $font-color;
+}
+// checkbox顏色調整
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $font-color;
+}
+// 間距調整
+.custom-control-inline {
+  margin-right: 0.5rem;
+}
+.custom-control{
+	padding-left: 1.3rem;
+}
+.custom-control-label::before,
+.custom-control-label::after{
+	left: -1.3rem;
+}
+
+// custom input 主題顏色
+@each $color, $value in $theme-colors {
+  .theme-#{$color} {
+    .custom-control-input:checked ~ .custom-control-label::before{
+    	background-color: #{$value};
+    }
+  }
+}
+
+// 購物車數量
+.form-group-qty{
+	display: flex;
+	flex: 1;
+	align-items: center;
+	margin-bottom: 0.5rem;
+	padding: 0 10px;
+	border: 1px solid currentColor;
+	@include breakpoint(md){
+		margin-right: 0.5rem;
+		margin-bottom: 0;
+	}
+	[data-icon]{
+		top: -1px;
+		font-size: 25px;
+		color: currentColor;
+		@include breakpoint(md){
+			top: -2px;
+		}
+	}
+	.btn-count{
+		height: 32px;
+		padding: 0;
+		color: currentColor;
+		border: 0;
+		outline: 0;
+		opacity: .6;
+		background-color: transparent;
+		cursor: pointer;
+		transition: all .3s;
+		&:hover{
+			opacity: 1;
+		}
+	}
+	.form-control{
+		min-width: 10px;
+		height: auto;
+		padding: 0;
+		border: none;
+		text-align: center;
+		font-size: 19px;
+		&:focus{
+			box-shadow: none;
+		}
+	}
+}

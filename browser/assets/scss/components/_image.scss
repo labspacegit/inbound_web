@@ -1,0 +1,23 @@
+// 
+// Image
+// 
+
+.image-cover{
+	@include background-cover();
+	@include size();
+}
+
+.image-product{
+	@include background-cover();
+	@include size(100px);
+	flex: 0 0 100px;
+}
+
+
+
+
+
+
+
+
+

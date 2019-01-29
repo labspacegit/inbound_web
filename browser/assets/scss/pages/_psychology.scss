@@ -1,0 +1,123 @@
+//
+// Psychology
+//
+
+// 測驗填答
+.question{
+	.question-item{
+		position: relative;
+		&:before{
+			@include absolute(top 21px left 10px);
+			content: "";
+			height: 100%;
+			border-left: 3px solid $border-color;
+		}
+		&:last-child:before{
+			border-left: 0;
+		}
+	}
+	.question-group{
+		margin-left: 2.5rem;
+	}
+	// 題數
+	.question-count{
+		@include absolute(top 11px left 0);
+		@include size(23px);
+		z-index: 10;
+		border-radius: 50%;
+		background-color: $border-color;
+		font-size: 15px;
+		line-height: 23px;
+		text-align: center;
+		// checked
+		&.active:before{
+			@include absolute(top 0 left 0);
+			@include size(23px);
+			font-family: 'ElegantIcons';
+			content: "\4e";
+			border-radius: 50%;
+			background-color: $test-light;
+		}
+	}
+	// 題目
+	.question-topic{
+		position: relative;
+		padding: 0.75rem 1rem;
+		background-color: $light;
+		// 題目左尖角
+		&:before{
+			@include absolute(top 17px left 0);
+			@include size(12px);
+			content: "";
+			background-color: $light;
+			transform: translate(-50%, 0) rotate(45deg);
+		}
+		// checked
+		&.active, &.active:before{
+			background-color: $test-light;
+		}
+		h6{
+			font-weight: 400;
+		}
+	}
+	.form-group{
+		padding: 0.75rem 1rem 1rem;
+		.custom-control{
+			width: calc(50% - 1rem);
+			margin-bottom: 0.5rem;
+			@include breakpoint(sm){
+				width: auto;
+			}
+		}
+		// hover
+		.custom-control-label:hover{
+			color: $test;
+		}
+		// checked
+		.custom-radio .custom-control-input:checked ~ .custom-control-label {
+		  color: $test;
+		}
+	}
+}
+
+// 送出測驗
+.btn-test-submit{
+	display: block;
+	width: 100%;
+	@include breakpoint(md){
+		display: inline-block;
+		width: auto;
+	}
+}
+
+// 結果圖表
+.chart-container{
+	position: relative;
+	margin: 0 auto;
+	&.radar{
+		@include breakpoint(md){
+			width: 70%;
+		}
+	}
+	&.polarArea{
+		@include breakpoint(md){
+			width: 60%;
+		}
+	}
+	&.bar{
+		@include breakpoint(md){
+			width: 100%;
+		}
+	}
+}
+// 結果分數
+.result-score{
+	border-top: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
+}
+
+
+
+
+
+

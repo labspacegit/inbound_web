@@ -1,0 +1,33 @@
+// 
+// Loading
+// 
+
+// 首次載入網站loading
+.loading{
+	@include size(100vw, 100vh);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// background-color: $home-light;
+	&:before{
+		@include size(100px);
+		content: "";
+		background: url(/assets/img/loading_03.png) 0 0 no-repeat;
+		background-size: 100% auto;
+		// animation: loading 2s infinite;
+	}
+}
+
+// loading動畫
+// @keyframes loading {
+// 	0% {
+// 		background-image: url(/assets/img/loading_01.png);
+// 	}
+// 	50% {
+// 		background-image: url(/assets/img/loading_02.png);
+// 	}
+// 	100% {
+// 		background-image: url(/assets/img/loading_03.png);
+// 	}
+// }

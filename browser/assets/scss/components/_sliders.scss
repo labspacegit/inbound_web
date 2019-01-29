@@ -1,0 +1,75 @@
+//
+// Sliders
+//
+
+// hero
+.hero-container{
+	display: flex;
+	flex-direction: row;
+	height: 400px;
+	min-height: 0;
+	margin: 4rem 0;
+}
+.hero-slides{
+	position: relative;
+	@include size(60%, 100%);
+	.hero-slide-item{
+		@include absolute(top 0 left 0);
+		@include size();
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .5s;
+		&:before{
+			@include absolute(top 0 left 0);
+			@include size();
+			display: block;
+			content: "";
+			background-image: linear-gradient(rgba(10,45,72,0),rgba(10,45,72,0.6));
+		}
+		&.active{
+			opacity: 1;
+			pointer-events: auto;
+		}
+		.hero-slide-link{
+			@include absolute(top 0 left 0);
+			@include size();
+		}
+		.hero-slide-img{
+			@include background-cover();
+			@include size();
+		}
+		.hero-slide-info{
+			@include absolute(bottom 0 left 0);
+			width: 100%;
+			padding: 1rem 2rem;
+			.hero-slide-title{
+				color: #fff;
+			}
+			.hero-slide-text{
+				margin-bottom: 0;
+				color: #fff;
+			}
+		}
+	}
+}
+.hero-menu{
+	@include size(40%, 100%);
+	.hero-menu-item{
+		border-top: 1px solid currentColor;
+		&.active{
+			.hero-menu-link{
+				color: currentColor;
+			}
+		}
+		.hero-menu-link{
+			@include size();
+			display: flex;
+			align-items: center;
+			margin-bottom: 0;
+			padding: 0 2rem;
+			font-size: 18px;
+		}
+	}
+}
+
+

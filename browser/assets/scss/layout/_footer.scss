@@ -1,0 +1,49 @@
+//
+// Footer
+//
+
+.footer{
+	padding: 2.5rem 0;
+	color: $font-light;
+	background-color: $gray-dark;
+	@include breakpoint(md){
+		padding: 4rem 0;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li{
+			a{
+				color: $font-light;
+			}
+		}
+	}
+	.footer-social{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 0.25rem;
+		a{
+			margin-right: 0.75rem;
+			color: $font-light;
+			&:hover{
+				text-decoration: none;
+			}
+			&.icon-email{
+				i:before{
+					position: relative;
+					top: -3px;
+				}
+			}
+			i:before{
+				font-size: 1.8rem;
+			}
+		}
+	}
+	.footer-copyright{
+		font-size: 14px;
+	}
+}
+
+

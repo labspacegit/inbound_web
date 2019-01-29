@@ -1,0 +1,78 @@
+// 
+// Text
+// 
+
+
+// theme color
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    color: #{$value};
+  }
+}
+@each $color, $value in $theme-lights {
+  .text-#{$color} {
+    color: #{$value};
+  }
+}
+@each $color, $value in $theme-darks {
+  .text-#{$color} {
+    color: #{$value};
+  }
+}
+
+
+// color
+.text-danger{
+	color: $home-dark !important;
+}
+.text-light{
+	color: $font-light !important;
+}
+.text-gray{
+	color: $font-gray !important;
+}
+
+// muted
+.text-muted{
+  color: $font-gray !important;
+}
+
+// price
+.text-price{
+  position: relative;
+  top: 1px;
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+// multiline
+.text-multiline {
+  @include multi-ellipsis($lineHeight: 1.4em, $lineCount: 2, $bgColor: white);
+  display: block;
+}
+.text-multi-2{
+  position: relative;
+  top: -2px;
+
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+  display: -webkit-box;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.text-multi-3{
+  position: relative;
+  top: -2px;
+
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
+  display: -webkit-box;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}

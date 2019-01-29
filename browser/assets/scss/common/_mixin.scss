@@ -1,0 +1,130 @@
+//
+// _mixin.scss
+//
+
+// em
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function px2em($value) {
+  $unit: unit($value);
+  $val: strip-unit($value);
+  @if($unit=='px') or ($unit=='') {
+    @return $val / strip-unit($font-size) * 1em;
+  }
+  @else {
+    @warn 'There is no unit conversion for "#{$unit}"';
+  }
+}
+
+// clearfix
+@mixin clearfix() {
+  &:after {
+  	content: "";
+  	display: table;
+    clear: both;
+  }
+}
+
+// Width, Height
+@mixin size($w : 100%, $h : $w) {
+  width: $w;
+  height: $h;
+}
+
+// Position
+// http://codepen.io/HugoGiraudel/pen/HDebE
+@mixin _position($position, $args) {
+
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i
+    and $i + 1 <= length($args)
+    and (type-of( nth($args, $i + 1) ) == number
+    or nth($args, $i + 1) == initial
+    or nth($args, $i + 1) == inherit ) {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+
+  position: $position;
+}
+
+@mixin absolute($args) {
+  @include _position(absolute, $args);
+}
+@mixin relative($args) {
+  @include _position(relative, $args);
+}
+@mixin fixed($args) {
+  @include _position(fixed, $args);
+}
+@mixin sticky($args) {
+  @include _position(sticky, $args);
+}
+
+// ellipsis
+@mixin ellipsis($max-width :  100%) {
+  max-width: $max-width;
+
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// @mixin multi-ellipsis($lines : 2) {
+//   -webkit-line-clamp: $lines;
+
+//   overflow: hidden;
+//   display: -webkit-box;
+//   -webkit-box-orient: vertical;
+//   text-overflow: ellipsis;
+//   word-wrap: break-word;
+// }
+
+// text hidden
+@mixin text-hide() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// background cover
+@mixin background-cover(){
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// mixin for multiline
+// http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
+@mixin multi-ellipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  // margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+

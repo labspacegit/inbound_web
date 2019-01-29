@@ -1,0 +1,60 @@
+// 
+// Upload
+// 
+
+// image
+.upload-image{
+	@include background-cover();
+	@include size(100px);
+}
+// 隱藏瀏覽按鈕
+.custom-file-label::after{
+	display: none;
+}
+
+// diary
+.upload-diary{
+	display: flex;
+	align-items: center;
+	.upload-file{
+		display: flex;
+		align-items: center;
+	}
+	.upload-image,
+	.file-upload,
+	.upload-video,
+	.upload-form{
+		float: left;
+	}
+	.upload-image,
+	.upload-video{
+		margin-right: 1rem;
+	}
+	.btn-upload{
+		color: $diary-dark;
+		background-color: $diary-light;
+	}
+}
+
+// member
+.upload-useredit{
+	.upload-image{
+		@include size(115px);
+		margin: 0 auto 1rem;
+		border-radius: 50%;
+	}
+	.upload-video,{
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

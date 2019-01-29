@@ -1,0 +1,65 @@
+//
+// Member
+//
+
+// home
+.member-side{
+	padding-right: 2rem !important;
+	border-right: 1px solid $border-color;
+}
+.member-content{
+	padding-left: 2rem !important;
+}
+
+// menu
+.member-nav{
+	.nav-item.active{
+		> .nav-link{
+			color: #fff;	
+			background-color: $home-dark;
+		}
+	}
+	.nav-link{
+		margin-bottom: 0.5rem;
+		background-color: $member-light;
+		&.active{
+			color: #fff;	
+			background-color: $home-dark;
+		}
+	}
+}
+
+// user
+.user{
+	.card-header{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+// useredit
+.useredit{
+	// datepicker
+	.mat-form-field{
+		width: calc(50% - 10px);
+	}
+	.mat-form-field-infix{
+		border-top: 0;
+	}
+}
+.upload-useredit{
+	.upload-image{
+		border: 1px solid $member-light;
+		background-color: $light;
+	}
+}
+
+// cart
+.cart-empty{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: calc(100vh - 320px - 8rem);
+}
+
+

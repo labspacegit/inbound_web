@@ -1,0 +1,68 @@
+//
+// _section.scss
+//
+
+// heading
+.section-heading{
+	padding: 1.5rem 15px;
+	text-align: center;
+	background-color: currentColor;
+	@include breakpoint(md){
+		padding: 2rem 15px;
+		font-size: 20px;
+	}
+	p{
+		margin-bottom: 0;
+		color: #fff;
+		line-height: 1.8;
+		@include breakpoint(md){
+			white-space:pre-wrap;
+		}
+	}
+}
+
+// contents
+.section-contents{
+	padding: 2rem 0;
+	@include breakpoint(md){
+		padding: 3rem 0;
+	}
+	@include breakpoint(lg){
+		padding: 4rem 0;
+	}
+}
+
+// 背景圖模糊
+.section-bg-blur{
+	position: relative;
+	margin-bottom: 2rem;
+	padding: 3rem 0;
+	background-color: rgba(118,73,50,0.9);
+	overflow: hidden;
+	.bg-blur-img{
+		@include absolute(top 0 left 0);
+		@include background-cover();
+		@include size();
+		z-index: -1;
+		opacity: 0.5;
+		filter: blur(5px);
+	}
+	p{
+		color: #fff !important;
+	}
+}
+
+// 滿版包含主選單
+.section-full-page{
+	width: 100%;
+	height: calc(100vh - 50px);
+	@include breakpoint(lg){
+		height: calc(100vh - 110px);
+	}
+}
+
+
+
+
+
+

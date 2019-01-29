@@ -1,0 +1,62 @@
+//
+// _colors.scss
+//
+
+// theme color
+@each $color, $value in $theme-colors {
+  .theme-#{$color} {
+    color: #{$value} !important;
+  }
+}
+@each $color, $value in $theme-lights {
+  .theme-#{$color} {
+    color: #{$value} !important;
+  }
+}
+@each $color, $value in $theme-darks {
+  .theme-#{$color} {
+    color: #{$value} !important;
+  }
+}
+
+// background color
+@each $color, $value in $theme-colors {
+  .bg-#{$color} {
+    background-color: #{$value} !important;
+  }
+}
+@each $color, $value in $theme-lights {
+  .bg-#{$color} {
+    background-color: #{$value} !important;
+  }
+}
+
+.bg-white{
+	background-color: #fff;
+}
+
+// light
+.bg-light{
+  background-color: rgba(220,220,220,1) !important;
+}
+.bg-light-15{
+  background-color: rgba(220,220,220,.15) !important;
+}
+.bg-light-25{
+  background-color: rgba(220,220,220,.25) !important;
+}
+.bg-light-50{
+  background-color: $light-50 !important;
+}
+
+// gray
+.bg-gray{
+  background-color: rgba(202,202,202,1) !important;
+}
+.bg-gray-25{
+  background-color: rgba(202,202,202,.25) !important;
+}
+.bg-gray-50{
+  background-color: rgba(202,202,202,.5) !important;
+}
+

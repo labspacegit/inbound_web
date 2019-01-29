@@ -1,0 +1,59 @@
+//
+// Button group
+//
+
+// size
+.btn-group-lg{
+  .btn{
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+// more
+.btn-group-more{
+	// margin-top: 2rem;
+	text-align: center;
+}
+// 顯示最後一個more按鈕, 其他隱藏
+.btn-group-more{
+  display: none;
+}
+.row + .btn-group-more,
+.card-deck + .btn-group-more{
+  display: block;
+}
+.row + div + .btn-group-more,
+.card-deck + div + .btn-group-more{
+  display: block;
+}
+
+// block
+.btn-group-block{
+  .btn{
+    width: 100%;
+  }
+}
+
+// cart
+.btn-group-cart{
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(md){
+    flex-direction: row;
+  }
+}
+
+// 隱藏線上課程購物車數量
+.btn-group-course{
+  .add-qty{
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+

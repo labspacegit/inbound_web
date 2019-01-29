@@ -1,0 +1,129 @@
+//
+// Dropdown
+//
+
+// 修正fixed後與content重疊問題
+.dropdown-fixed-block{
+	position: relative;
+	height: 40px;
+	@include breakpoint(lg){
+		display: none;
+		height: 0;
+	}
+}
+
+// 類別篩選器
+.dropdown-navbar{
+	@include size(100%, 40px);
+	@include fixed(top 50px);
+	z-index: 1020;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 15px;
+	background-color: #fff;
+	@include breakpoint(lg){
+		top: 70px;
+		right: 0;
+		z-index: 1030;
+		width: auto;
+		background-color: transparent;
+	}
+	// 切換按鈕
+	.dropdown-toggle{
+		padding: 0 0.5rem;
+		color: $font-color;
+		border: 0;
+		background-color: transparent;
+		cursor: pointer;
+		&:after{
+			display: none;
+		}
+	}
+	// 篩選器按鈕
+	.toggle-category{
+		margin-right: -10px;
+		font-size: 1.7rem;
+		@include breakpoint(lg){
+			margin-right: 2px;
+		}
+		// icon filter
+		[data-icon="f"]{
+			top: 2px;
+		}
+		// icon close
+		[data-icon="M"]{
+			top: 0;
+		}
+	}
+}
+.dropdown-category{
+	@include fixed(top 90px left 0);
+	display: none;
+	z-index: 1020;
+	width: 100%;
+	padding: 0.5rem 0;
+	background-color: $home-dark;
+	overflow: hidden;
+	@include breakpoint(lg){
+		top: 110px;
+		padding: 1rem 129px;
+	}
+	.nav-category{
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		padding: 0 15px;
+		@include breakpoint(lg){
+			padding: 0;
+		}
+		&.sub-categories{
+			display: none;
+		}
+		.nav-link{
+			margin: 0.5rem 1px;
+			text-align: center;
+			white-space: nowrap;
+			color: inherit;
+			background-color: #fff;
+			@include breakpoint(lg){
+				width: 120px;
+			}
+			&:hover{
+				color: inherit;
+				.nav-text{
+					color: $font-dark;
+				}
+			}
+			&.active{
+				background-color: currentColor;
+			}
+			.nav-text{
+				color: $font-color;
+			}
+		}
+	}
+}
+
+
+// 搜尋
+.toggler-search{
+	cursor: pointer;
+}
+.dropdown-search{
+	@include fixed(top 50px left 0);
+	display: none;
+	z-index: 1010;
+	width: 100%;
+	padding: 5rem 0;
+	justify-content: center;
+	background-color: $home-dark;
+	@include breakpoint(lg){
+		top: 110px;
+	}
+	.form-control{
+		// border-radius: 0;
+		border: 1px solid $home-light;
+	}
+	.btn{
+		color: $home-dark;
+	}
+}

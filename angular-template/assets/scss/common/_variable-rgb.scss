@@ -1,0 +1,114 @@
+//
+// _variable.scss
+//
+
+// color
+$light: #dcddde; // K15
+$gray: #c8c8c9; // $writer-light, $member-light
+$gray-dark: #58595b; // K80
+$dark: #494544; // $writer-dark, $member-dark
+
+// theme color
+// 首頁
+$home: #b93947;
+$home-light: #f2d9d0;
+$home-dark: #962135;
+// 心理測驗
+$test: #7b656c;
+$test-light: #f2eae4;
+$test-btn-light: #d4b9a8;
+$test-dark: #3e3342;
+// 電子書
+$ebook: #648d80;
+$ebook-light: #cbe2d9;
+$ebook-dark: #065050;
+// 線上課程
+$course: #a7843d;
+$course-light: #e4d7a6;
+$course-dark: #6b4b37;
+// 文章
+$article: #465876;
+$article-light: #aab9c9;
+$article-dark: #1f3149;
+// 實體活動
+$activity: #bf6c4c;
+$activity-light: #eecda7;
+$activity-dark: #691e15;
+// 作者專區
+$writer: $gray-dark;
+$writer-light: $gray;
+$writer-dark: $dark;
+// 日記本
+$diary: #a2a95f;
+$diary-light: #d5d9bb;
+$diary-dark: #44502c;
+// 會員專區
+$member: $gray-dark;
+$member-light: $gray;
+$member-dark: $dark;
+
+
+// colors
+$theme-colors: (
+  "home":        $home,
+  "test":        $test,
+  "ebook":      $ebook,
+  "course":       $course,
+  "article":      $article,
+  "activity":        $activity,
+  "writer":        $writer,
+  "diary":        $diary,
+  "member":        $member
+);
+
+$theme-lights: (
+  "home-light":        $home-light,
+  "test-light":        $test-light,
+  "ebook-light":      $ebook-light,
+  "course-light":       $course-light,
+  "article-light":      $article-light,
+  "activity-light":        $activity-light,
+  "writer-light":        $writer-light,
+  "diary-light":        $diary-light,
+  "member-light":        $member-light
+);
+
+$theme-btn-lights: (
+  "home-light":        $home-light,
+  "test-light":        $test-btn-light,
+  "ebook-light":      $ebook-light,
+  "course-light":       $course-light,
+  "article-light":      $article-light,
+  "activity-light":        $activity-light,
+  "writer-light":        $writer-light,
+  "diary-light":        $diary-light,
+  "member-light":        $member-light
+);
+
+
+// fb
+$fb-color: #5067ae;
+
+
+// font
+$font-color: $gray-dark;
+$font-light-color: $light;
+
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+// border
+$border-color: $light;
+
+
+// transition
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+
+
+
+
+
+
+
+
+

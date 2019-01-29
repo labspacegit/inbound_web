@@ -1,0 +1,39 @@
+// 
+// Hashtag
+// 
+
+.hashtags{
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin-top: 0.75rem;
+	// margin-bottom: 1.5rem;
+	padding-left: 0;
+	// font-size: 1.2rem;
+	.badge{
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+		padding: 0;
+		border-radius: 0;
+		font-size: 13px;
+	}
+	.hashtag-link{
+		display: inline-block;
+		padding: 0.3rem 0.5rem;
+		color: #fff;
+		&:hover{
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+	.hashtag-remove{
+		padding: 0.3rem 0.5rem 0.3rem 0;
+		color: #fff;
+		border: 0;
+		background-color: transparent;
+		cursor: pointer;
+		[data-icon]{
+			top: 0;
+		}
+	}
+}

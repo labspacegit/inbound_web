@@ -1,0 +1,344 @@
+//
+// Diary
+//
+
+// container
+.diary-container {
+	position: relative;	
+  max-width: 1430px;
+}
+
+// cover
+.diary-cover{
+	@include size(100%, 813px);
+	background: url(assets/img/diary/cover.jpg) 50% 50% no-repeat;
+	.diary-enter{
+		@include absolute(top 68% left 0);
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		.btn{
+			width: 180px;
+		}
+	}
+}
+
+// my diary
+.diary-frame{
+	@include size(100%, 813px);
+	display: flex;
+	position: relative;
+	padding-top: 8px;
+	padding-bottom: 14px;
+	background: url(assets/img/diary/bg_body.jpg) center top repeat-x;
+	&:before{
+		@include absolute(top 0 left 0);
+		@include size(50px, 100%);
+		content: "";
+		background: url(assets/img/diary/bg_left.jpg) left top no-repeat;
+	}
+	&:after{
+		@include absolute(top 0 right 0);
+		@include size(79px, 100%);
+		content: "";
+		background: url(assets/img/diary/bg_right.jpg) right top no-repeat;
+	}
+}
+
+// diary left side
+.diary-side{
+	flex: 0 0 30%;
+	max-width: 30%;
+	padding-left: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+// diary main content
+.diary-content{
+	flex: 0 0 calc(70% - 5rem);
+	max-width: calc(70% - 5rem);
+	// padding-top: 2rem;
+	// padding-bottom: 2rem;
+	padding-left: 0;
+	padding-right: 0;
+	.btn-edit{
+		width: 68%;
+	}
+}
+
+// scroller
+.diary-scroll-container{
+	width: 100%;
+	height: calc(100% - 86px); //減掉底下bottom的高度
+	padding-top: 2rem;
+	// padding-bottom: 1rem;
+	// padding-left: 1rem;
+	padding-right: 1rem;
+}
+.diary-scroll-inner{
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.diary-scroll-bottom{
+	// display: flex;
+	// justify-content: flex-end;
+	padding: 1rem 2rem 2rem 1rem;
+}
+
+// diary menu
+.diary-menu{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 1rem;
+	.diary-menu-item{
+		border-bottom: 1px solid $diary-light;
+	}
+	.diary-menu-link{
+		display: block;
+		padding: 0.5rem 2rem;
+		font-size: 20px;
+		white-space: nowrap;
+		&:hover{
+			text-decoration: none;
+		}
+		&.active [data-icon]:before{
+			// content: "\52";
+			color: $diary;
+		}
+	}
+	[data-icon]{
+		color: $diary-light;
+		margin-right: 0.8rem;
+		// &:before{
+		// 	content: "\5b";
+		// }
+	}
+	// active
+	.diary-menu-item.active{
+		.diary-menu-link{
+			[data-icon]:before{
+				// content: "\52";
+				color: $diary;
+			}
+		}
+	}
+	// 修正讀取我的日記相關頁面時主選單無法高亮問題
+	.d-none.active + .diary-menu-item > .diary-menu-link{
+		[data-icon]:before{
+			// content: "\52";
+			color: $diary;
+		}
+	}
+}
+
+// diary search
+.diary-search{
+	margin-bottom: 0.65rem;
+	.form-inline{
+		justify-content: center;
+	}
+	.form-icon{
+		font-size: 26px;
+		color: $diary;
+	}
+	.btn-search{
+		display: flex;
+		justify-content: center;
+		[data-icon]{
+			margin-right: 1px;
+		}
+	}
+}
+
+// diary read
+.diary-read{
+	// padding-right: 1rem;
+}
+
+// diary read heading
+.diary-heading{
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid $border-color;
+	.row{
+		> .col,
+		> [class*="col-"] {
+	    display: flex;
+	    align-items: center;
+	  }
+	}
+	h3{
+		line-height: 1.4;
+	}
+	.diary-heading-image{
+		@include background-cover();
+		@include size(100%);
+		padding-bottom: 60%;
+	}
+	.diary-date{
+		display: block;
+		margin-top: 1rem;
+		margin-bottom: 0.25rem;
+		color: $font-gray;
+	}
+}
+
+// post test chart
+.diary-test-chart{
+	position: relative;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	padding: 3rem;
+	&#create_chart{
+		width: 88%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&#post_chart{
+		width: 58%;
+	}
+	.diary-test-row{
+		display: flex;
+		flex-direction: row;
+		border-left: 1px solid $border-color;
+		border-right: 0;
+		border-bottom: 1px solid $border-color;
+		&:first-child{
+			border-top: 1px solid $border-color;
+		}
+	}
+	.diary-test-cell{
+		display: flex;
+		width: (100%/9);
+		border-right: 1px solid $border-color;
+		&:hover{
+			background-color: lighten($light, 10%);
+		}
+		button{
+			width: 100%;
+			padding-bottom: 100%;
+			border: 0;
+			background-color: transparent;
+			cursor: pointer;
+		}
+	}
+	.line-cross{
+		@include absolute(top 1.5rem left 1.5rem);
+		@include size(calc(100% - 3rem));
+		overflow: hidden;
+		pointer-events: none;
+		[class*=line]{
+			position: absolute;
+			&.line-x{
+				top: 50%;
+				left: 0;
+				width: 100%;
+				border-top: 1px solid $diary-dark;
+			}
+			&.line-y{
+				top: 0;
+				left: 50%;
+				height: 100%;
+				border-right: 1px solid $diary-dark;
+			}
+		}
+	}
+	.labels-cross{
+		[class*=label]{
+			position: absolute;
+			padding: 0.5rem;
+			color: #fff;
+			line-height: 1;
+			// border-radius: 0.25rem;
+			background-color: $diary;
+			&.label-top{
+				top: 0;
+				left: 50%;
+				background-color: $diary-green;
+				transform: translateX(-50%);
+			}
+			&.label-bottom{
+				bottom: 0;
+				left: 50%;
+				background-color: $diary-green-light;
+				transform: translateX(-50%);
+			}
+			&.label-left{
+				top: 50%;
+				left: 0;
+				background-color: $diary-green-light;
+				transform: translateY(-50%);
+			}
+			&.label-right{
+				top: 50%;
+				right: 0;
+				background-color: $diary-green;
+				transform: translateY(-50%);
+			}
+		}
+	}
+	.labels-around{
+		[class*=label]{
+			position: absolute;
+			padding: 0.5rem;
+			color: $diary;
+			line-height: 1;
+			&.label-top-left{
+				top: 0;
+				left: 0;
+			}
+			&.label-top-right{
+				top: 0;
+				right: 0;
+			}
+			&.label-bottom-right{
+				bottom: 0;
+				right: 0;
+			}
+			&.label-bottom-left{
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+	.pin{
+		@include absolute(top 0 left 0);
+		display: flex;
+		margin-top: -2.5%;
+		margin-left: 1.5%;
+		// background-color: $diary-light;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .3s;
+		&#create_pin{
+			font-size: 1.7vw;
+		}
+		&#post_pin{
+			font-size: 2vw;
+		}
+		&.active{
+			opacity: 1;
+			animation: pin .3s;
+		}
+		[data-icon]{
+			color: $diary-dark;
+			// font-size: 2vw;
+			transform: rotate(30deg);
+		}
+	}
+}
+@keyframes pin {
+	from { transform: scale(1.5) translateY(-20px); }
+	to { transform: scale(1) translateY(0); }
+}
+
+
+
+
+
+
+
+

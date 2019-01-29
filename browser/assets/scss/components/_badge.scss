@@ -1,0 +1,46 @@
+//
+// Badge
+//
+
+// cart
+.badge-cart{
+  @include absolute(top -5px right -10px);
+  padding: 3px 6px 2px;
+  line-height: 1.2;
+  color: #fff;
+  background-color: $home;
+  @include breakpoint(lg){
+    top: 0;
+    right: 0;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+  	color: #fff;
+  	background-color: #{$value};
+  	&:hover{
+  		background-color: darken($value, 10%);
+  	}
+  }
+}
+
+@each $color, $value in $theme-lights {
+  .badge-#{$color} {
+  	color: #fff;
+  	background-color: #{$value};
+  	&:hover{
+  		background-color: darken($value, 10%);
+  	}
+  }
+}
+
+@each $color, $value in $theme-darks {
+  .badge-#{$color} {
+  	color: #fff;
+  	background-color: #{$value};
+  	&:hover{
+  		background-color: darken($value, 10%);
+  	}
+  }
+}

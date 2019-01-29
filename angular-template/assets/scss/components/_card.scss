@@ -1,0 +1,194 @@
+//
+// Card
+//
+
+// base
+.card{
+	position: relative;
+	border: 0;
+	border-radius: 0;
+	.card-header{
+		padding: 0;
+		background-color: transparent;
+		border-bottom: 0;
+		&:first-child{
+			border-radius: 0;
+		}
+	}
+	.card-img-top{
+		@include background-cover();
+		position: relative;
+		padding-bottom: 100%;
+		border-radius: 0;
+	}
+	.card-body{
+		position: relative;
+		padding: 0;
+		.card-text{
+			@include ellipsis();
+			margin-bottom: 0;
+			font-size: 15px;
+			color: $font-color;
+		}
+	}
+}
+
+// card img overlay
+.card-overlay{
+	height: 515px;
+	margin-bottom: 2rem;
+	padding: 160px 35px 46px;
+	background-color: $test;
+	.card-img-bg{
+		@include background-cover();
+		@include absolute(top 0 left 0);
+		width: 100%;
+		height: 83.5%;
+		padding-bottom: 80%;
+	}
+	.card-body{
+		position: relative;
+		padding: 0.5rem 1.5rem;
+		background-color: #fff;
+		.card-title{
+			margin-bottom: 0;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			border-bottom: 1px solid currentColor;
+		}
+		.card-summary{
+			height: 54px;
+			margin-bottom: 0.25rem;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			border-bottom: 1px solid currentColor;
+			font-size: 15px;
+			&.multiline{
+				span{
+					@include multi-ellipsis($lineHeight: 1.5em, $lineCount: 2, $bgColor: white);
+		  		display: block;
+		  		color: $font-color;
+				}
+			}
+		}
+		.card-button{
+			@include absolute(bottom 0 left 50%);
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			text-align: center;
+			transform: translateX(-50%);
+			.btn{
+				width: 62%;
+				margin: 0 auto -19px;
+				color: currentColor;
+			}
+		}
+	}
+}
+
+// card border style
+.card-border{
+	margin-bottom: 2rem;
+	padding: 0 1.25rem;
+	&:before{
+		@include absolute(bottom 0 left 0);
+		@include size();
+		content: "";
+		z-index: 0;
+		border: 6px solid $ebook-light;
+	}
+	.card-header{
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		border-bottom: 1px solid currentColor;
+	}
+	.card-img-top{
+		width: 100%;
+		margin: 0 auto;
+		padding-bottom: 100%;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+	.card-body{
+		.card-title{
+			height: 4.7rem;
+			margin-bottom: 0.25rem;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			border-bottom: 1px solid currentColor;
+			&.multiline{
+				a{
+					display: block;
+				}
+				span{
+					@include multi-ellipsis($lineHeight: 1.4em, $lineCount: 3, $bgColor: white);
+					display: block;
+				}
+			}
+		}
+		.card-avatar{
+			display: flex;
+			align-items: center;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			margin-bottom: 0.25rem;
+			.avatar-text{
+				color: $font-color;
+				font-size: 15px;
+			}
+		}
+		.card-title, .card-text, .card-avatar, .btn-group-block{
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+		}
+		.card-text{
+			color: $font-color;
+		}
+		.btn{
+			width: 100%;
+			margin-top: 1rem;
+		}
+	}
+}
+
+// ebook
+.card-ebook{
+	&:before{
+		height: 68%;
+		border: 6px solid $ebook-light;
+	}
+	.card-img-top{
+		padding-bottom: 137%;
+	}
+}
+
+// course
+.card-course{
+	&:before{
+		height: 84%;
+		border: 6px solid $course-light;
+	}
+}
+
+// writer
+.card-writer{
+	&:before{
+		height: 84%;
+		border: 6px solid $writer-light;
+	}
+	.card-img-top{
+		padding-bottom: 135%;
+	}
+	.card-text:first-child{
+		margin-top: 0.5rem;
+	}
+}
+
+
+
+
+
+
+
+

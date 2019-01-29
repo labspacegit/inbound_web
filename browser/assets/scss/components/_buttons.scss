@@ -1,0 +1,115 @@
+//
+// Button
+//
+
+// base
+.btn{
+  padding-left: 1rem;
+  padding-right: 1rem;
+	border-radius: 0;
+  [data-icon]{
+    margin-right: 0.5rem;
+  }
+}
+
+// size
+.btn-lg{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 1rem;
+}
+.btn-xl{
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+// 
+// theme btn
+// 
+
+// theme btn primary
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+  	color: #fff !important;
+  	background-color: #{$value};
+  	&:hover{
+  		color: #fff;
+  		background-color: darken($value, 10%);
+  	}
+  }
+}
+
+// theme btn light
+@each $color, $value in $theme-btn-text-lights {
+  .btn-#{$color} {
+    color: #{$value} !important;
+    &:hover{
+      color: darken($value, 10%);
+    }
+  }
+}
+@each $color, $value in $theme-btn-lights {
+  .btn-#{$color} {
+    background-color: #{$value};
+    &:hover{
+      background-color: darken($value, 10%);
+    }
+  }
+}
+
+// theme btn dark
+@each $color, $value in $theme-darks {
+  .btn-#{$color} {
+    color: #fff !important;
+    background-color: #{$value};
+    &:hover{
+      color: #fff;
+      background-color: darken($value, 10%);
+    }
+  }
+}
+
+// theme btn outline primary
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    // color: #{$value};
+    border: 1px solid #{$value};
+    &:hover{
+      color: #fff;
+      background-color: #{$value};
+    }
+  }
+}
+
+// theme btn group primary
+@each $color, $value in $theme-colors {
+  .btn-group-#{$color} {
+  	.btn{
+  		color: #fff !important;
+  		background-color: #{$value};
+  		&:hover{
+  			color: #fff;
+  			background-color: darken($value, 10%);
+  		}
+  	}
+  }
+}
+
+.btn-light{
+  color: #fff !important;
+  border-color: $gray;
+  background-color: $gray;
+  &:hover{
+    color: #fff;
+    border-color: darken($gray, 10%);
+    background-color: darken($gray, 10%);
+  }
+}
+
+
+
+
+
+
+
+

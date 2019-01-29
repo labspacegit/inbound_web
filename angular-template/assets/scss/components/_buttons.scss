@@ -1,0 +1,103 @@
+//
+// _button.scss
+//
+
+// base
+.btn{
+	// padding-top: 0.25rem;
+	// padding-bottom: 0.25rem;
+	border-radius: 0;
+  [data-icon]{
+    margin-right: 0.5rem;
+  }
+}
+
+// theme btn
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+  	color: #fff;
+  	background-color: #{$value};
+  	&:hover{
+  		color: #fff;
+  		background-color: darken($value, 10%);
+  	}
+  }
+}
+
+// theme btn light
+@each $color, $value in $theme-btn-lights {
+  .btn-#{$color} {
+    color: #fff;
+    background-color: #{$value};
+    &:hover{
+      color: #fff;
+      background-color: darken($value, 10%);
+    }
+  }
+}
+
+// theme btn dark
+@each $color, $value in $theme-darks {
+  .btn-#{$color} {
+    color: #fff;
+    background-color: #{$value};
+    &:hover{
+      color: #fff;
+      background-color: darken($value, 10%);
+    }
+  }
+}
+
+// theme btn group
+@each $color, $value in $theme-colors {
+  .btn-group-#{$color} {
+  	.btn{
+  		color: #fff;
+  		background-color: #{$value};
+  		&:hover{
+  			color: #fff;
+  			background-color: darken($value, 10%);
+  		}
+  	}
+  }
+}
+
+// btn group
+.btn-group-more{
+	// margin-top: 2rem;
+	text-align: center;
+}
+// 顯示最後一個more按鈕, 其他隱藏
+.btn-group-more{
+  display: none;
+}
+.row + .btn-group-more{
+  display: block;
+}
+.row + div + .btn-group-more{
+  display: block;
+}
+
+.btn-group-block{
+  .btn{
+    width: 100%;
+  }
+}
+
+.btn-group-cart{
+  display: flex;
+}
+
+// 隱藏線上課程購物車數量
+.btn-group-course{
+  .add-qty{
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+

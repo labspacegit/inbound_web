@@ -1,0 +1,58 @@
+//
+// _settings.scss
+//
+
+body{
+	color: $font-color !important;
+	font-family: $font-family;
+}
+
+// a
+a{
+	color: $font-color;
+	&:hover{
+		color: $dark;
+		text-decoration: none;
+	}
+}
+a:not([href]):not([tabindex]){
+	color: $font-color;
+	cursor: pointer;
+	&:hover{
+		color: $dark;
+	}
+}
+
+// 隱藏input箭頭按鈕
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+// placeholder
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #888 !important;
+  font-weight: 300;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #888 !important;
+  font-weight: 300;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #888 !important;
+  font-weight: 300;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #888 !important;
+  font-weight: 300;
+}
+
+
+
+
+
+
+
+

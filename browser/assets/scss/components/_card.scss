@@ -1,0 +1,320 @@
+//
+// Card
+//
+
+// card default
+.card{
+	border: 1px solid $border-color;
+	border-radius: 0;
+	a, a:hover{
+		color: inherit;
+		text-decoration: none;
+	}
+	.card-header{
+		border-bottom: 0;
+		border-radius: 0;
+		background-color: $light-50;
+	}
+}
+
+// card deck
+.card-deck .card{
+	.card-img-top{
+		@include background-cover();
+		padding-bottom: 70%;
+	}
+}
+
+// custom card common
+.card-overlay,
+.card-border,
+.card-book{
+	position: relative;
+	margin-bottom: 2rem;
+	border: 0;
+	border-radius: 0;
+	.card-header{
+		padding: 0;
+		background-color: transparent;
+		border-bottom: 0;
+		&:first-child{
+			border-radius: 0;
+		}
+	}
+	.card-img-top{
+		@include background-cover();
+		position: relative;
+		padding-bottom: 100%;
+		border-radius: 0;
+	}
+	.card-body{
+		position: relative;
+		padding: 0;
+		// a{
+		// 	width: 100%;
+		// }
+		.card-text{
+			@include ellipsis();
+			margin-bottom: 0;
+			font-size: 15px;
+			color: $font-color;
+		}
+	}
+}
+
+// card img overlay
+.card-overlay{
+	// height: 515px;
+	// margin-bottom: 2rem;
+	padding: 160px 35px 46px;
+	background-color: $test;
+	overflow: hidden;
+	.card-img-bg{
+		@include background-cover();
+		@include absolute(top 0 left 0);
+		width: 100%;
+		height: 83.5%;
+		padding-bottom: 80%;
+	}
+	.card-body{
+		// display: flex;
+		// position: relative;
+		padding: 0.5rem 1.5rem 4.5rem;
+		background-color: #fff;
+		.card-title{
+			margin-bottom: 0;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			// border-bottom: 1px solid currentColor;
+			color: $font-color;
+		}
+		.card-summary{
+			margin-bottom: 0.25rem;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			border-top: 1px solid currentColor;
+			border-bottom: 1px solid currentColor;
+			font-size: 15px;
+			&.multiline{
+				height: 52px;
+				span{
+					@include multi-ellipsis($lineHeight: 1.4em, $lineCount: 2, $bgColor: white);
+		  		display: block;
+		  		color: $font-color;
+				}
+			}
+		}
+		.card-button{
+			@include absolute(bottom 0 left 50%);
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			text-align: center;
+			transform: translateX(-50%);
+			.btn{
+				width: 62%;
+				margin: 0 auto -19px;
+			}
+		}
+	}
+}
+
+// card border style
+.card-border{
+	// margin-bottom: 2rem;
+	padding: 0 1.25rem;
+	&:before{
+		@include absolute(bottom 0 left 0);
+		@include size();
+		content: "";
+		z-index: 0;
+		border: 6px solid $ebook-light;
+	}
+	.card-header{
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		border-bottom: 1px solid currentColor;
+	}
+	.card-img-top{
+		width: 100%;
+		margin: 0 auto;
+		padding-bottom: 100%;
+	}
+	.card-body{
+		.card-title{
+			margin-bottom: 0.25rem;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			border-bottom: 1px solid currentColor;
+			&.multiline{
+				height: 76px;
+				span{
+					@include multi-ellipsis($lineHeight: 1.4em, $lineCount: 3, $bgColor: white);
+					display: block;
+					color: $font-color;
+				}
+			}
+		}
+		.card-avatar{
+			display: flex;
+			align-items: center;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			margin-bottom: 0.25rem;
+			.avatar-text{
+				color: $font-color;
+				font-size: 15px;
+			}
+		}
+		.card-title, .card-text, .card-avatar, .btn-group-block{
+			@include breakpoint(md){
+				padding-left: 0.75rem;
+				padding-right: 0.75rem;
+			}
+		}
+		.card-text{
+			color: $font-color;
+		}
+		.btn{
+			width: 100%;
+			margin-top: 1rem;
+		}
+	}
+}
+
+// ebook
+.card-border-ebook{
+	&:before{
+		height: 68%;
+		border: 6px solid $ebook-light;
+	}
+	.card-img-top{
+		padding-bottom: 137%;
+	}
+}
+
+// course
+.card-border-course{
+	&:before{
+		height: 84%;
+		border: 6px solid $course-light;
+	}
+}
+
+// activity 作者說明列表用
+.card-border-activity{
+	&:before{
+		height: 84%;
+		border: 6px solid $activity-light;
+	}
+}
+
+// writer
+.card-border-writer{
+	&:before{
+		height: 84%;
+		border: 6px solid $writer-light;
+	}
+	.card-img-top{
+		padding-bottom: 135%;
+	}
+	.card-text:first-child{
+		margin-top: 0.5rem;
+	}
+}
+
+// card diary book
+.card-group-book{
+	&.row{
+		margin-right: -10px;
+		margin-left: -10px;
+		> .col,
+	  > [class*="col-"] {
+	    padding-right: 10px;
+	    padding-left: 10px;
+	  }
+	}
+}
+.card-book{
+	height: 385px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	&:before, &:after{
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		content: "";
+		height: 100%;
+		border: 1px solid $border-dark;
+		opacity: 0.5;
+		pointer-events: none;
+		box-shadow: 4px 4px 4px -3px rgba(0,0,0,.2);
+	}
+	&:before{
+		left: 0;
+		width: 4%;
+		margin-right: 2px;
+	}
+	&:after{
+		right: 0;
+		width: calc(96% - 2px);
+	}
+	.card-title{
+		margin-bottom: 0.5rem;
+		padding: 0.25rem 0.75rem 0.25rem 1.75rem;
+		&.multiline{
+			height: 52px;
+			span{
+				@include multi-ellipsis($lineHeight: 1.4em, $lineCount: 2, $bgColor: white);
+				display: block;
+			}
+		}
+	}
+	.card-body{
+		.card-img-center{
+			@include background-cover();
+			position: relative;
+			height: 140px;
+		}
+		.card-summary{
+			margin-bottom: 0.5rem;
+			padding: 0.35rem 0.75rem 0.25rem 1.75rem;
+			font-size: 15px;
+			background-color: $diary-light;
+			&.multiline{
+				height: 76px;
+				span{
+					@include multi-ellipsis($lineHeight: 1.4em, $lineCount: 3, $bgColor: $diary-light);
+		  		display: block;
+		  		color: $font-color;
+				}
+			}
+		}
+		.card-text{
+			margin-bottom: 0.5rem;
+		}
+		.card-button{
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
+// hashtag
+.card-hashtag{
+	@include multi-ellipsis($lineHeight: 1.2em, $lineCount: 2, $bgColor: white);
+	margin-top: 0.25em;
+	word-break: break-all;
+	word-wrap:break-word;
+	a{
+		margin-right: 0.25rem;
+		font-size: 15px;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+
+
+

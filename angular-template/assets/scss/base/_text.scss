@@ -1,0 +1,14 @@
+// 
+// Text
+// 
+
+.text-danger{
+	color: $home !important;
+}
+
+// multiline
+.text-multiline {
+  @include multi-ellipsis($lineHeight: 1.2em, $lineCount: 2, $bgColor: white);
+  display: block;
+}
+

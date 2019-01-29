@@ -1,0 +1,48 @@
+//
+// _icons.scss
+//
+
+// ElegantIcons
+// https://www.elegantthemes.com/blog/resources/elegant-icon-font
+@font-face {
+	font-family: 'ElegantIcons';
+	src:url('assets/fonts/ElegantIcons.eot');
+	src:url('assets/fonts/ElegantIcons.eot?#iefix') format('embedded-opentype'),
+		url('assets/fonts/ElegantIcons.woff') format('woff'),
+		url('assets/fonts/ElegantIcons.ttf') format('truetype'),
+		url('assets/fonts/ElegantIcons.svg#ElegantIcons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon] {
+	position: relative;
+	top: 1px;
+	
+	font-style: normal;
+	&:before{
+		font-family: 'ElegantIcons';
+	  content: attr(data-icon);
+	  speak: none;
+	  font-weight: normal;
+	  font-variant: normal;
+	  text-transform: none;
+	  line-height: 1;
+	  -webkit-font-smoothing: antialiased;
+	}
+}
+
+// share
+.icon-group-share{
+	display: flex;
+	margin: 0.8rem 0;
+	a{
+		display: flex;
+		margin: 0 0.5rem;
+		text-align: center;
+		img{
+			@include size(88px, 24px);
+		}
+	}
+}

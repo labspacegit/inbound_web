@@ -1,0 +1,27 @@
+//
+// _colors.scss
+//
+
+// theme color
+@each $color, $value in $theme-colors {
+  .theme-#{$color} {
+    color: #{$value};
+  }
+}
+@each $color, $value in $theme-lights {
+  .theme-#{$color} {
+    color: #{$value};
+  }
+}
+
+// background color
+@each $color, $value in $theme-lights {
+  .bg-#{$color} {
+    background-color: #{$value} !important;
+  }
+}
+
+
+
+
+

@@ -15666,11 +15666,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sep = '/';
 exports.version = "22.2.2";
 //export const APIUrl: string="http://inbound-api.labspace.com.tw/public";
-exports.APIUrl = "http://inbound-test-api.labspace.com.tw/inbound_b/public";
+exports.APIUrl = "https://inbound-test-api.labspace.com.tw/inbound_b/public";
 //export const FBappId: string="578141545937739";
 exports.FBappId = "1944659978980880";
 //export const FileUrl: string="http://inbound-api.labspace.com.tw/storage/app/public";
-exports.FileUrl = "http://inbound-test-api.labspace.com.tw/inbound_b/storage/app/public";
+exports.FileUrl = "https://inbound-test-api.labspace.com.tw/inbound_b/storage/app/public";
 exports.UploadSize = 2000000;
 exports.UploadVideoTime = 5;
 //預設大頭貼路徑-

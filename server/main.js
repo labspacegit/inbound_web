@@ -15684,11 +15684,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sep = '/';
 exports.version = "22.2.2";
 //export const APIUrl: string="http://inbound-api.labspace.com.tw/public";
-exports.APIUrl = "https://inbound-test-api.labspace.com.tw/inbound_b/public";
-//export const FBappId: string="578141545937739";
-exports.FBappId = "1944659978980880";
 //export const FileUrl: string="http://inbound-api.labspace.com.tw/storage/app/public";
-exports.FileUrl = "https://inbound-test-api.labspace.com.tw/inbound_b/storage/app/public";
+exports.APIUrl = "http://inbound-test-api.labspace.com.tw/inbound_b/public";
+exports.FileUrl = "http://inbound-test-api.labspace.com.tw/inbound_b/storage/app/public";
 exports.UploadSize = 2000000;
 exports.UploadVideoTime = 5;
 //預設大頭貼路徑-
@@ -15698,7 +15696,9 @@ exports.diaryCover = "assets/img/diary_cover.jpg";
 export const GoogleRecaptcha: string="6LfeoHgUAAAAAHAf7STNiJyGliWQStxlOZTgq-YL";
 export const GoogleSearchKey: string="AIzaSyBUWwYqBiUrhveEL6zxskURm7E-agdDvmw";
 export const GoogleSearchID: string="013260005329638453905:wuqk-iaohtg";
+//export const FBappId: string="578141545937739";
 */
+exports.FBappId = "1944659978980880";
 exports.GoogleRecaptcha = "6LdQ3YgUAAAAAJVisnhFK65Sq2mTUj2audIfYN7Q";
 exports.GoogleSearchKey = "AIzaSyCKihQQ49HK5tWT3PF9MUKas1Imy6uSQ6o";
 exports.GoogleSearchID = "011156246841620800859:or4cpepxima";

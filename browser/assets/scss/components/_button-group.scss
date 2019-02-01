@@ -42,6 +42,11 @@
   @include breakpoint(md){
     flex-direction: row;
   }
+  // 修正手機版因左右間距過大而歪掉
+  // .btn-cart{
+  //   padding-left: 0.5rem;
+  //   padding-right: 0.5rem;
+  // }
 }
 
 // 隱藏線上課程購物車數量

@@ -64,8 +64,6 @@
 
 // card img overlay
 .card-overlay{
-	// height: 515px;
-	// margin-bottom: 2rem;
 	padding: 160px 35px 46px;
 	background-color: $test;
 	overflow: hidden;
@@ -77,15 +75,12 @@
 		padding-bottom: 80%;
 	}
 	.card-body{
-		// display: flex;
-		// position: relative;
 		padding: 0.5rem 1.5rem 4.5rem;
 		background-color: #fff;
 		.card-title{
 			margin-bottom: 0;
 			padding-top: 0.5rem;
 			padding-bottom: 0.5rem;
-			// border-bottom: 1px solid currentColor;
 			color: $font-color;
 		}
 		.card-summary{
@@ -121,7 +116,6 @@
 
 // card border style
 .card-border{
-	// margin-bottom: 2rem;
 	padding: 0 1.25rem;
 	&:before{
 		@include absolute(bottom 0 left 0);
@@ -131,9 +125,13 @@
 		border: 6px solid $ebook-light;
 	}
 	.card-header{
-		padding-left: 0.75rem;
-		padding-right: 0.75rem;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 		border-bottom: 1px solid currentColor;
+		@include breakpoint(sm){
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+		}
 	}
 	.card-img-top{
 		width: 100%;

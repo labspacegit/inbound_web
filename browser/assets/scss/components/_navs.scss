@@ -2,10 +2,10 @@
 // Navs
 //
 
-// sort
+// 列表篩選器
 .nav-sort{
 	justify-content: flex-end;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 	@include breakpoint(md){
 		margin-bottom: 2rem;
 	}
@@ -43,7 +43,7 @@
 	}
 }
 
-// sort form
+// 交易紀錄篩選器
 .nav-sort-form{
 	justify-content: flex-end;
 	margin-bottom: 1rem;

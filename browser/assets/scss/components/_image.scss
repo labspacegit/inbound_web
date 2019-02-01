@@ -7,6 +7,21 @@
 	@include size();
 }
 
+.hero-cover{
+	position: relative;
+	margin-bottom: 1rem;
+	@include breakpoint(md){
+		margin-bottom: 2rem;
+	}
+	.hero-image{
+		@include background-cover();
+		height: 300px;
+		@include breakpoint(md){
+			height: 400px;
+		}
+	}
+}
+
 .image-product{
 	@include background-cover();
 	@include size(100px);

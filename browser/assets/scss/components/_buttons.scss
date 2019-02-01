@@ -8,7 +8,10 @@
   padding-right: 1rem;
 	border-radius: 0;
   [data-icon]{
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
+    @include breakpoint(sm){
+      margin-right: 0.5rem;
+    }
   }
 }
 

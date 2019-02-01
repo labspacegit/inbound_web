@@ -18,7 +18,7 @@
 	position: relative;
 	.banner-item-image {
 		@include background-cover();
-	  padding-bottom: 88%;
+	  padding-bottom: 120%;
 	  @include breakpoint(md){
 	  	height: calc(100vh - 110px);
 	  	padding-bottom: 0;

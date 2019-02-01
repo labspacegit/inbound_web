@@ -4,9 +4,17 @@
 
 // favorite
 .icon-favorite{
-	@include absolute(top 1rem right 2rem);
-	font-size: 2rem;
+	@include absolute(top 1rem right 1.5rem);
+	font-size: 1.75rem;
 	color: currentColor !important;
+	@include breakpoint(md){
+		top: 1.5rem;
+		right: 2rem;
+		font-size: 2rem;
+	}
+	[data-icon]{
+		display: flex;
+	}
 }
 
 // share

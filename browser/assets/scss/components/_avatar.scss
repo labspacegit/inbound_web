@@ -4,11 +4,20 @@
 
 .avatar{
 	@include background-cover();
+	// position: relative;
 	display: flex;
 	margin-right: 0.5rem;
 	border-radius: 100%;
-	border: 1px solid currentColor;
+	// border: 1px solid currentColor;
 	background-color: $light;
+	// &:before{
+	// 	@include absolute(top -6px left -6px);
+	// 	@include size(calc(100% + 12px));
+	// 	display: block;
+	// 	content: "";
+	// 	border-radius: 100%;
+	// 	border: 1px solid currentColor;
+	// }
 	&.avatar-sm{
 		@include size(30px);
 	}
@@ -18,6 +27,7 @@
 	&.avatar-lg{
 		@include size(54px);
 		margin-right: 0.75rem;
+		border: 1px solid currentColor;
 		@include breakpoint(md){
 			@include size(64px);
 		}
@@ -28,9 +38,15 @@
 	&.avatar-xxl{
 		@include size(140px);
 	}
+	// 作者專區
 	&.avatar-writer{
-		width: 100%;
-		padding-bottom: 100%;
+		width: 36%;
+		padding-bottom: 36%;
+		@include breakpoint(sm){
+			width: 100%;
+			padding-bottom: 100%;
+		}
+		
 	}
 }
 

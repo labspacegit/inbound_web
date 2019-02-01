@@ -28,20 +28,22 @@
 
 // 
 // ngx gallery
-.ngx-gallery-image-size-cover{
+// 
+.ngx-gallery-arrow-wrapper{
+	z-index: 1000 !important;
 	.ngx-gallery-icon{
 		font-size: 2.5rem !important;
 	}
-	.ngx-gallery-arrow-left{
-		.ngx-gallery-arrow{
-			left: 5px !important;
-		}
-	}
-	.ngx-gallery-arrow-right{
-		.ngx-gallery-arrow{
-			right: 5px !important;
-		}
-	}
+}
+.ngx-gallery-arrow-left	.ngx-gallery-arrow{
+	left: 5px !important;
+}
+.ngx-gallery-arrow-right .ngx-gallery-arrow{
+	right: 5px !important;
+}
+.ngx-gallery-preview-icons .ngx-gallery-icon{
+	margin-top: 7px !important;
+	font-size: 35px !important;
 }
 
 // 

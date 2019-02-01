@@ -15681,7 +15681,7 @@ export const GoogleRecaptcha: string="6LfeoHgUAAAAAHAf7STNiJyGliWQStxlOZTgq-YL";
 export const GoogleSearchKey: string="AIzaSyBUWwYqBiUrhveEL6zxskURm7E-agdDvmw";
 export const GoogleSearchID: string="013260005329638453905:wuqk-iaohtg";
 */
-exports.GoogleRecaptcha = "6LdQ3YgUAAAAAJVisnhFK65Sq2mTUj2audIfYN7Q-YL";
+exports.GoogleRecaptcha = "6LdQ3YgUAAAAAJVisnhFK65Sq2mTUj2audIfYN7Q";
 exports.GoogleSearchKey = "AIzaSyCKihQQ49HK5tWT3PF9MUKas1Imy6uSQ6o";
 exports.GoogleSearchID = "011156246841620800859:or4cpepxima";
 

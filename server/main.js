@@ -16681,8 +16681,8 @@ var i6 = __webpack_require__(/*! ./subscription-record.component */ "./src/app/m
 var styles_SubscriptionRecordComponent = [i0.styles];
 var RenderType_SubscriptionRecordComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_SubscriptionRecordComponent, data: {} });
 exports.RenderType_SubscriptionRecordComponent = RenderType_SubscriptionRecordComponent;
-function View_SubscriptionRecordComponent_4(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "a", [["class", "btn btn-block btn-home"]], [[8, "href", 4]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u4ED8\u6B3E"]))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = i1.ɵinlineInterpolate(3, "", _co.payUrl, "?id=", _co.order.id, "&order_number=", _co.order.order_number, ""); _ck(_v, 0, 0, currVal_0); }); }
-function View_SubscriptionRecordComponent_3(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 4, "span", [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, [" \u672A\u4ED8\u6B3E "])), (_l()(), i1.ɵeld(2, 0, null, null, 2, "div", [["class", "col-6 col-sm-3 col-md-2"]], null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SubscriptionRecordComponent_4)), i1.ɵdid(4, 16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = ((_co.order.status == 0) || (_co.order.status == 2)); _ck(_v, 4, 0, currVal_0); }, null); }
+function View_SubscriptionRecordComponent_4(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "a", [["class", "btn btn-block btn-home"]], [[8, "href", 4]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u4ED8\u6B3E"]))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = i1.ɵinlineInterpolate(3, "", _co.payUrl, "?id=", _v.parent.parent.context.$implicit.id, "&subscription_number=", _v.parent.parent.context.$implicit.subscription_number, ""); _ck(_v, 0, 0, currVal_0); }); }
+function View_SubscriptionRecordComponent_3(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 4, "span", [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, [" \u672A\u4ED8\u6B3E "])), (_l()(), i1.ɵeld(2, 0, null, null, 2, "div", [["class", "col-6 col-sm-3 col-md-2"]], null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SubscriptionRecordComponent_4)), i1.ɵdid(4, 16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, "ngIf"] }, null)], function (_ck, _v) { var currVal_0 = ((_v.parent.context.$implicit.subscribe_status == 0) || (_v.parent.context.$implicit.subscribe_status == 2)); _ck(_v, 4, 0, currVal_0); }, null); }
 function View_SubscriptionRecordComponent_5(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "span", [["class", "text-home"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u8A02\u95B1\u4E2D "]))], null, null); }
 function View_SubscriptionRecordComponent_6(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "span", [["class", "text-muted"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u8A02\u95B1\u5230\u671F"]))], null, null); }
 function View_SubscriptionRecordComponent_7(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "span", [], null, null, null, null, null)), (_l()(), i1.ɵted(1, null, ["\u4E0B\u6B21\u4ED8\u6B3E\u65E5:", ""]))], null, function (_ck, _v) { var currVal_0 = _v.parent.context.$implicit.next_pay_date; _ck(_v, 1, 0, currVal_0); }); }
@@ -17591,10 +17591,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sep = '/';
 exports.version = "22.2.2";
 exports.angularUrl = "http://google-seo.labspace.com.tw";
-exports.APIUrl = "http://inbound-api.labspace.com.tw/public";
-exports.FileUrl = "http://inbound-api.labspace.com.tw/storage/app/public";
-//export const APIUrl: string="http://inbound-test-api.labspace.com.tw/inbound_b/public";
-//export const FileUrl: string="http://inbound-test-api.labspace.com.tw/inbound_b/storage/app/public";
+//export const APIUrl: string="http://inbound-api.labspace.com.tw/public";
+//export const FileUrl: string="http://inbound-api.labspace.com.tw/storage/app/public";
+exports.APIUrl = "http://inbound-test-api.labspace.com.tw/inbound_b/public";
+exports.FileUrl = "http://inbound-test-api.labspace.com.tw/inbound_b/storage/app/public";
 exports.UploadSize = 2000000;
 exports.UploadVideoTime = 5;
 //預設大頭貼路徑-

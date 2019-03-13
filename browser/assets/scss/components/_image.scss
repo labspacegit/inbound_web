@@ -7,13 +7,13 @@
 	@include size();
 }
 
-.hero-cover{
+.image-cover-hero{
 	position: relative;
 	margin-bottom: 1rem;
 	@include breakpoint(md){
 		margin-bottom: 2rem;
 	}
-	.hero-image{
+	.image-cover{
 		@include background-cover();
 		height: 300px;
 		@include breakpoint(md){
@@ -24,8 +24,8 @@
 
 .image-product{
 	@include background-cover();
-	@include size(100px);
-	flex: 0 0 100px;
+	@include size(88px);
+	flex: 0 0 88px;
 }
 
 

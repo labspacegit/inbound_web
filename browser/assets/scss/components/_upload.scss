@@ -6,6 +6,8 @@
 .upload-image{
 	@include background-cover();
 	@include size(100px);
+	flex: 0 0 100px;
+	background-color: $light;
 }
 // 隱藏瀏覽按鈕
 .custom-file-label::after{
@@ -39,12 +41,32 @@
 // member
 .upload-useredit{
 	.upload-image{
-		@include size(115px);
+		@include size(90px);
 		margin: 0 auto 1rem;
+		// border: 1px solid $member-light;
 		border-radius: 50%;
+		@include breakpoint(sm){
+			@include size(115px);
+			margin: 0 auto 1rem;
+		}
 	}
-	.upload-video,{
+	.upload-video{
 		display: none;
+	}
+	// 修改圖片上傳按鈕樣式
+	.btn-primary{
+		color: $home !important;
+		border: 1px solid $home !important;
+		background-color: #fff !important;
+		&:hover{
+		  color: darken($home, 10%) !important;
+		  border: 1px solid darken($home, 10%) !important;
+		  background-color: #fff !important;
+		}
+	}
+	// 修改裁切圖片套件預設class
+	section.inline-block{
+		display: block !important;
 	}
 }
 

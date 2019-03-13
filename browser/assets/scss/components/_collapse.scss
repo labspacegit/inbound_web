@@ -14,8 +14,8 @@
 			overflow: hidden;
 			background-color: #fff;
 			z-index: 1012;
-			transition: transform .4s, width .4s;
 			transform: translateX(-100%);
+			transition: transform .4s, width .4s;
 			&.open{
 				width: 285px;
 				transform: translateX(0);

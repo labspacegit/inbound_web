@@ -15,7 +15,7 @@ body{
 a{
 	color: $font-color;
 	&:hover{
-		color: $dark;
+		color: $font-dark;
 		// text-decoration: none;
 	}
 }
@@ -23,7 +23,7 @@ a:not([href]):not([tabindex]){
 	color: $font-color;
 	cursor: pointer;
 	&:hover{
-		color: $dark;
+		color: $font-dark;
 	}
 }
 
@@ -37,6 +37,13 @@ small, .small{
 
 label{
 	margin-bottom: 0.3rem;
+}
+
+// 分隔線
+hr, .hr{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-top: 1px solid $border-color;
 }
 
 // 引用

@@ -7,6 +7,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
 	border-radius: 0;
+  font-weight: 600;
   [data-icon]{
     margin-right: 0.25rem;
     @include breakpoint(sm){
@@ -69,32 +70,24 @@
       color: #fff;
       background-color: darken($value, 10%);
     }
+    &.disabled, &:disabled{
+      background-color: #{$value};
+      opacity: 1;
+    }
   }
 }
 
 // theme btn outline primary
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
-    // color: #{$value};
+    color: #{$value} !important;
     border: 1px solid #{$value};
+    background-color: #fff;
     &:hover{
-      color: #fff;
-      background-color: #{$value};
+      color: darken($value, 10%) !important;
+      border: 1px solid darken($value, 10%);
+      background-color: #fff;
     }
-  }
-}
-
-// theme btn group primary
-@each $color, $value in $theme-colors {
-  .btn-group-#{$color} {
-  	.btn{
-  		color: #fff !important;
-  		background-color: #{$value};
-  		&:hover{
-  			color: #fff;
-  			background-color: darken($value, 10%);
-  		}
-  	}
   }
 }
 
@@ -106,6 +99,12 @@
     color: #fff;
     border-color: darken($gray, 10%);
     background-color: darken($gray, 10%);
+  }
+  &.disabled, &:disabled,
+  &.active, &:active{
+    border-color: $gray !important;
+    background-color: $gray !important;
+    opacity: 1;
   }
 }
 

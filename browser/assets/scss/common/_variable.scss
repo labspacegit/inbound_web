@@ -1,5 +1,5 @@
 //
-// _variable.scss
+// Variable
 //
 
 // color
@@ -111,7 +111,7 @@ $theme-btn-text-lights: (
   "activity-light":        $activity-dark,
   "writer-light":        $writer-dark,
   "diary-light":        $diary-dark,
-  "member-light":        $member-dark
+  "member-light":        #fff
 );
 
 
@@ -122,7 +122,7 @@ $fb-color: #5067ae;
 // font
 $font-color: $gray-dark;
 $font-light: $light;
-$font-gray: darken($gray, 20%);
+$font-gray: darken($gray, 30%);
 $font-dark: $dark;
 
 // $font-family: Circular,"Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;

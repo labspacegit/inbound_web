@@ -2,6 +2,30 @@
 // Button group
 //
 
+// theme btn group primary
+@each $color, $value in $theme-colors {
+  .btn-group-#{$color} {
+    .btn{
+      color: #fff !important;
+      background-color: #{$value};
+      &:hover{
+        color: #fff;
+        background-color: darken($value, 10%);
+      }
+    }
+    // disabled
+    .disabled{
+      color: #fff !important;
+      background-color: lighten($value, 20%);
+      opacity: 1;
+      &:hover{
+        color: #fff;
+        background-color: lighten($value, 20%);
+      }
+    }
+  }
+}
+
 // size
 .btn-group-lg{
   .btn{
@@ -10,21 +34,21 @@
   }
 }
 
-// more
+// load more
 .btn-group-more{
 	// margin-top: 2rem;
 	text-align: center;
 }
-// 顯示最後一個more按鈕, 其他隱藏
+// 顯示最後一個load more按鈕, 其他隱藏
 .btn-group-more{
   display: none;
 }
 .row + .btn-group-more,
-.card-deck + .btn-group-more{
+.card-row + .btn-group-more{
   display: block;
 }
 .row + div + .btn-group-more,
-.card-deck + div + .btn-group-more{
+.card-row + div + .btn-group-more{
   display: block;
 }
 
@@ -35,26 +59,25 @@
   }
 }
 
-// cart
+// add cart
 .btn-group-cart{
   display: flex;
   flex-direction: column;
   @include breakpoint(md){
     flex-direction: row;
   }
-  // 修正手機版因左右間距過大而歪掉
-  // .btn-cart{
-  //   padding-left: 0.5rem;
-  //   padding-right: 0.5rem;
-  // }
 }
 
-// 隱藏線上課程購物車數量
-.btn-group-course{
-  .add-qty{
-    display: none !important;
+// buy later
+.btn-group-buylater{
+  .btn{
+    width: 100%;
+    @include breakpoint(md){
+      width: auto;
+    }
   }
 }
+
 
 
 

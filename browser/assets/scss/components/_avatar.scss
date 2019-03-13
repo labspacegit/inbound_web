@@ -1,42 +1,39 @@
 //
-// _avatar.scss
+// Avatar
 //
 
 .avatar{
 	@include background-cover();
-	// position: relative;
 	display: flex;
-	margin-right: 0.5rem;
 	border-radius: 100%;
-	// border: 1px solid currentColor;
 	background-color: $light;
-	// &:before{
-	// 	@include absolute(top -6px left -6px);
-	// 	@include size(calc(100% + 12px));
-	// 	display: block;
-	// 	content: "";
-	// 	border-radius: 100%;
-	// 	border: 1px solid currentColor;
-	// }
 	&.avatar-sm{
 		@include size(30px);
+		flex: 0 0 30px;
 	}
 	&.avatar-md{
 		@include size(50px);
+		flex: 0 0 50px;
 	}
 	&.avatar-lg{
 		@include size(54px);
-		margin-right: 0.75rem;
 		border: 1px solid currentColor;
 		@include breakpoint(md){
 			@include size(64px);
 		}
 	}
 	&.avatar-xl{
-		@include size(120px);
+		@include size(90px);
+		flex: 0 0 90px;
+		@include breakpoint(md){
+			@include size(120px);
+			flex: 0 0 120px;
+		}
 	}
-	&.avatar-xxl{
+	// 作者介紹
+	&.avatar-single-writer{
 		@include size(140px);
+		flex: 0 0 140px;
 	}
 	// 作者專區
 	&.avatar-writer{
@@ -46,7 +43,6 @@
 			width: 100%;
 			padding-bottom: 100%;
 		}
-		
 	}
 }
 

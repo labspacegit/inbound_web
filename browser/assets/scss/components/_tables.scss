@@ -2,73 +2,176 @@
 // Tables
 // 
 
-// base
-.table{
-	border-collapse: collapse;
-	border-spacing: 0;
-	thead th{
+// 網格 responsive list
+.table-list{
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid $border-color;
+	// list item
+	li{
+		list-style: none;
+		margin: 0;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid $border-color;
+		@include breakpoint(sm){
+			padding: 0.75rem 0;
+		}
+	}
+	// link
+	.text-link{
+		color: $home !important;
+		text-decoration: underline;
+		&:hover, &:active{
+			color: darken($home, 10%) !important;
+		}
+	}
+	// 欄位說明
+	.table-list-header{
 		font-size: 15px;
-		font-weight: 400;
-		white-space: nowrap;
-		color: $font-gray;
-		// border-bottom: 1px solid $border-color;
-		border-bottom: 0;
+		display: none;
+		@include breakpoint(sm){
+			display: flex;
+		}
 	}
-	th, td{
-		border-top: 1px solid $border-color;
+	// 商品標題
+	.table-list-title{
+		display: flex;
 	}
-	tbody + tbody{
-		border-top: 0;
+	// 修正核取方塊無文字定位偏移問題
+	.custom-control{
+		display: flex;
+		margin-right: 0.5rem;
+		@include breakpoint(sm){
+			margin-right: 1rem;
+		}
 	}
-	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
-		line-height: 1.3;
-	}
-}
-
-// member
-.table-member{
-	> thead th{
-		// background-color: $home-light;
-	}
-	.td-detail{
-		border-bottom: 2px solid $border-color;
-		text-align: left;
-	}
-	// mail
-	.td-mail-subject{
-		width: 71%;
-	}
-	// order
-	.td-order-pay{
-		// padding-bottom: 0;
-		&:empty{
+	// 手機版文字標頭
+	.table-list-label{
+		@include breakpoint(sm){
 			display: none;
 		}
 	}
-	.td-order-detail{
-		padding-top: 0;
-		border-top: 0;
+	// 按鈕
+	.btn-action{
+		display: block;
+		margin-right: 1rem;
+		padding: 0.25rem;
+		@include breakpoint(sm){
+			display: inline-block;
+			margin-right: 0px;
+			padding: 0.25rem 0.5rem;
+		}
 	}
-	// btn
-	.btn-detail{
-		color: $home !important;
-		font-size: 21px;
-	}
-	.btn-remove{
-		font-size: 21px;
+	.btn-action-block{
+		width: 100%;
+		padding: 0.25rem;
+		@include breakpoint(sm){
+			width: auto;
+			padding: 0.25rem 0.5rem;
+		}
 	}
 }
 
-.table-detail{
-	> thead th{
-		background-color: $member-light;
+// 購物車
+.table-list-cart{
+	// 商品標題
+	.table-list-title{
+		margin-top: 0.25rem;
+		@include breakpoint(sm){
+			margin-top: 0;
+		}
+	}
+	// 商品圖片
+	.table-list-img{
+		@include background-cover();
+		flex: 0 0 100px;
+		height: 100px;
+		margin-right: 0.75rem;
+		@include breakpoint(md){
+			margin-right: 1rem;
+		}
+	}
+	// 詳細說明
+	.table-list-detail{
+		display: flex;
+		align-items: center;
+		margin-top: 0.5rem;
+		font-size: 15px;
+		@include breakpoint(sm){
+			align-items: flex-start;
+			margin-top: 0;
+		}
+		@include breakpoint(md){
+			font-size: 1rem;
+		}
+		[class*="col-"]{
+			width: auto;
+		}
+	}
+	// 商品數量
+	.table-list-quantity{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		// 輸入數量
+		.input-quantity{
+			width: 40px;
+			height: calc(1.5rem + 2px);
+			text-align: center;
+			@include breakpoint(md){
+				height: calc(1.8125rem + 2px);
+			}
+		}
+	}
+	// 按鈕
+	.btn-action{
+		display: inline-block;
+		padding: 0;
+		border: transparent;
+		@include breakpoint(md){
+			width: 100%;
+			padding: 0.25rem 0.5rem;
+			border: 1px solid $home;
+		}
 	}
 }
 
+// 訊息通知
+.table-list-mail{
+	.table-list-detail{
+		padding-left: 29px;
+		@include breakpoint(sm){
+			padding-left: 0;
+		}
+	}
+}
 
+// 交易紀錄
+.table-list-record{
+	li{
+		padding-bottom: 0.75rem;
+	}
+}
 
-
-
+// 訂單明細
+.table-list-record-detail{
+	margin-bottom: 0.75rem;
+	border-top: 0px;
+	@include breakpoint(sm){
+		margin-top: 0.75rem;
+		border-top: 1px solid $border-color;
+	}
+	// list item
+	li{
+		padding: 0.5rem 0;
+	}
+	// 商品圖片
+	.table-list-img{
+		@include background-cover();
+		flex: 0 0 60px;
+		height: 60px;
+	}
+}
 
 
 

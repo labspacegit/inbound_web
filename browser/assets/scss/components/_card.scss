@@ -14,15 +14,38 @@
 		border-bottom: 0;
 		border-radius: 0;
 		background-color: $light-50;
+		.nav-tabs .nav-link{
+			padding: 1rem 0;
+		}
 	}
 }
 
-// card deck
-.card-deck .card{
-	.card-img-top{
-		@include background-cover();
-		padding-bottom: 70%;
-	}
+// 取消卡片圓角
+.card-img-top {
+	@include background-cover();
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+// 小間距的卡片組
+.card-row{
+	display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+  @include breakpoint(sm){
+  	margin-right: -10px;
+  	margin-left: -10px;
+  }
+  > .col,
+  > [class*="col-"] {
+    padding-right: 5px;
+    padding-left: 5px;
+    @include breakpoint(sm){
+    	padding-right: 10px;
+    	padding-left: 10px;
+    }
+  }
 }
 
 // custom card common
@@ -75,7 +98,7 @@
 		padding-bottom: 80%;
 	}
 	.card-body{
-		padding: 0.5rem 1.5rem 4.5rem;
+		padding: 0.5rem 1.5rem 3rem;
 		background-color: #fff;
 		.card-title{
 			margin-bottom: 0;
@@ -122,7 +145,8 @@
 		@include size();
 		content: "";
 		z-index: 0;
-		border: 6px solid $ebook-light;
+		height: 77%;
+		border: 6px solid $writer-light;
 	}
 	.card-header{
 		padding-left: 0.5rem;
@@ -180,7 +204,7 @@
 	}
 }
 
-// ebook
+// 電子書
 .card-border-ebook{
 	&:before{
 		height: 68%;
@@ -191,7 +215,7 @@
 	}
 }
 
-// course
+// 線上課程
 .card-border-course{
 	&:before{
 		height: 84%;
@@ -199,7 +223,7 @@
 	}
 }
 
-// activity 作者說明列表用
+// 實體活動 作者商品列表用
 .card-border-activity{
 	&:before{
 		height: 84%;
@@ -207,7 +231,7 @@
 	}
 }
 
-// writer
+// 作者專區
 .card-border-writer{
 	&:before{
 		height: 84%;
@@ -218,6 +242,14 @@
 	}
 	.card-text:first-child{
 		margin-top: 0.5rem;
+	}
+}
+
+// 你可能會喜歡
+.card-border-recommend{
+	&:before{
+		height: 77%;
+		border: 6px solid currentColor;
 	}
 }
 
@@ -234,9 +266,15 @@
 	}
 }
 .card-book{
-	height: 385px;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	// height: 385px;
+	margin-bottom: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.75rem;
+	@include breakpoint(md){
+		margin-bottom: 2rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
 	&:before, &:after{
 		position: absolute;
 		top: 0;
@@ -272,10 +310,11 @@
 		.card-img-center{
 			@include background-cover();
 			position: relative;
-			height: 140px;
+			// height: 140px;
+			padding-bottom: 50%;
 		}
 		.card-summary{
-			margin-bottom: 0.5rem;
+			// margin-bottom: 0.5rem;
 			padding: 0.35rem 0.75rem 0.25rem 1.75rem;
 			font-size: 15px;
 			background-color: $diary-light;
@@ -300,18 +339,62 @@
 
 // hashtag
 .card-hashtag{
-	@include multi-ellipsis($lineHeight: 1.2em, $lineCount: 2, $bgColor: white);
-	margin-top: 0.25em;
+	margin-top: 0.5em;
+	line-height: 1.2em;
 	word-break: break-all;
-	word-wrap:break-word;
+	word-wrap: break-word;
 	a{
 		margin-right: 0.25rem;
 		font-size: 15px;
+		color: currentColor;
 		&:hover{
-			text-decoration: underline;
+			text-decoration: underline !important;
 		}
 	}
 }
+
+// 
+// 會員中心
+// 
+
+// 已購商品
+.card-myproduct{
+	margin-bottom: 1rem;
+	.card-link{
+		@include size();
+		display: flex;
+		flex: 1 0 0%;
+		flex-direction: column;
+	}
+	.card-img-top{
+		padding-bottom: 80%;
+	}
+	.card-body{
+		padding: 0.75rem;
+	}
+	.card-title{
+		margin-bottom: 0;
+	}
+	.card-footer{
+		padding-top: 0;
+		border-top: 0;
+		background-color: transparent;
+	}
+	.card-avatar{
+		display: flex;
+		align-items: center;
+	}
+}
+
+// 我的測驗
+.card-mytest{
+		margin-bottom: 1rem;
+	.card-img-top{
+		padding-bottom: 80%;
+	}
+}
+
+
 
 
 

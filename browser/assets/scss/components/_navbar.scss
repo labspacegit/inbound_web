@@ -11,6 +11,10 @@
 	background-color: $writer-dark;
 }
 
+// 選單bar預設底色
+.header{
+	color: $member-light;
+}
 // 修正fixed後與content重疊問題
 .header-fixed-block{
 	position: relative;

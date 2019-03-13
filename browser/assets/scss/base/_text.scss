@@ -31,6 +31,9 @@
 .text-gray{
 	color: $font-gray !important;
 }
+.text-dark{
+  color: $font-dark !important;
+}
 
 // muted
 .text-muted{
@@ -45,6 +48,12 @@
   line-height: 1.1;
 }
 
+// truncate
+.text-truncate{
+  position: relative;
+  top: -1px;
+}
+
 // multiline
 .text-multiline {
   @include multi-ellipsis($lineHeight: 1.4em, $lineCount: 2, $bgColor: white);
@@ -52,7 +61,7 @@
 }
 .text-multi-2{
   position: relative;
-  top: -2px;
+  top: -1px;
 
   -webkit-line-clamp: 2;
 
@@ -65,7 +74,7 @@
 }
 .text-multi-3{
   position: relative;
-  top: -2px;
+  top: -1px;
 
   -webkit-line-clamp: 3;
 

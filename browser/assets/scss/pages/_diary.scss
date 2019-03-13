@@ -6,64 +6,125 @@
 .diary-container {
 	position: relative;	
   max-width: 1430px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 // cover
 .diary-cover{
-	@include size(100%, 813px);
-	background: url(assets/img/diary/cover.jpg) 50% 50% no-repeat;
+	@include size(100%, calc(100vw * 1256/750));
+	background: url(assets/img/diary/cover_m.jpg) 50% 50% no-repeat;
+	background-size: cover;
+	@include breakpoint(lg){
+		@include size(100%, 813px);
+		background: url(assets/img/diary/cover.jpg) 50% 50% no-repeat;
+	}
 	.diary-enter{
 		@include absolute(top 68% left 0);
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+		@include breakpoint(lg){
+			flex-direction: row;
+		}
+		.avatar-diary{
+			@include size(86px);
+			margin-right: 0;
+			margin-bottom: 1rem;
+			@include breakpoint(lg){
+				@include size(120px);
+				margin-right: 1.5rem;
+				margin-bottom: 0;
+			}
+		}
 		.btn{
-			width: 180px;
+			@include breakpoint(lg){
+				width: 180px;
+			}
 		}
 	}
 }
 
 // my diary
 .diary-frame{
-	@include size(100%, 813px);
+	// @include size(100%, calc(100vh - 50px));
 	display: flex;
 	position: relative;
-	padding-top: 8px;
-	padding-bottom: 14px;
-	background: url(assets/img/diary/bg_body.jpg) center top repeat-x;
+	background-color: #fff;
+	@include breakpoint(lg){
+		@include size(100%, 813px);
+		padding-top: 8px;
+		padding-bottom: 14px;
+		background: url(assets/img/diary/bg_body.jpg) center top repeat-x;
+	}
 	&:before{
-		@include absolute(top 0 left 0);
-		@include size(50px, 100%);
-		content: "";
-		background: url(assets/img/diary/bg_left.jpg) left top no-repeat;
+		@include breakpoint(lg){
+			@include absolute(top 0 left 0);
+			@include size(50px, 100%);
+			content: "";
+			background: url(assets/img/diary/bg_left.jpg) left top no-repeat;
+		}
 	}
 	&:after{
 		@include absolute(top 0 right 0);
-		@include size(79px, 100%);
+		@include size(26px, 100%);
 		content: "";
-		background: url(assets/img/diary/bg_right.jpg) right top no-repeat;
+		background: url(assets/img/diary/bg_right_m.jpg) right top no-repeat;
+		background-size: cover;
+		@include breakpoint(lg){
+			@include size(79px, 100%);
+			background: url(assets/img/diary/bg_right.jpg) right top no-repeat;
+		}
 	}
 }
 
 // diary left side
 .diary-side{
-	flex: 0 0 30%;
-	max-width: 30%;
-	padding-left: 2rem;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	@include fixed(top 50px left 0);
+	@include size(100%, calc(100% - 50px));
+	z-index: 4;
+	padding: 2rem;
+	background-color: #fff;
+	overflow-y: auto;
+	transform: translateX(-100%);
+	transition: transform .4s;
+	@include breakpoint(md){
+		width: 50%;
+	}
+	@include breakpoint(lg){
+		position: static;
+		flex: 0 0 30%;
+		max-width: 30%;
+		padding-right: 15px;
+		background-color: transparent;
+		transform: translateX(0%);
+		transition: transform 0s;
+	}
+	&.open{
+		transform: translateX(0%);
+	}
+	// calendar
+	.calendar-header{
+		margin-top: 0.4rem;
+		@include breakpoint(lg){
+			margin-top: 0;
+		}
+	}
 }
 
 // diary main content
 .diary-content{
-	flex: 0 0 calc(70% - 5rem);
-	max-width: calc(70% - 5rem);
-	// padding-top: 2rem;
-	// padding-bottom: 2rem;
+	position: relative;
+	flex: 0 0 calc(100% - 1.6rem);
+	max-width: calc(100% - 1.6rem);
 	padding-left: 0;
 	padding-right: 0;
+	@include breakpoint(lg){
+		flex: 0 0 calc(70% - 5rem);
+		max-width: calc(70% - 5rem);
+	}
 	.btn-edit{
 		width: 68%;
 	}
@@ -71,21 +132,56 @@
 
 // scroller
 .diary-scroll-container{
-	width: 100%;
-	height: calc(100% - 86px); //減掉底下bottom的高度
-	padding-top: 2rem;
-	// padding-bottom: 1rem;
-	// padding-left: 1rem;
-	padding-right: 1rem;
+	// @include size();
+	padding: 1rem;
+	@include breakpoint(lg){
+		@include size();
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		padding-left: 0;
+	}
+	&.has-scroll-bottom{
+		// height: calc(100% - 70px); //減掉底下scroll bottom的高度70px
+		@include breakpoint(lg){
+			height: calc(100% - 86px); //減掉底下scroll bottom的高度86px
+			padding-bottom: 0;
+		}
+	}
 }
 .diary-scroll-inner{
 	padding-left: 1rem;
-	padding-right: 1rem;
+	// padding-bottom: 1rem;
+	@include breakpoint(lg){
+		padding-right: 1rem;
+		padding-bottom: 1rem;
+	}
 }
 .diary-scroll-bottom{
-	// display: flex;
-	// justify-content: flex-end;
-	padding: 1rem 2rem 2rem 1rem;
+	display: flex;
+	justify-content: flex-end;
+	padding: 1rem;
+	background-color: #fff;
+	@include breakpoint(lg){
+		justify-content: flex-start;
+	}
+}
+
+// diary menu toggler
+.diary-toggler{
+	@include fixed(top 83px left 0);
+	@include size(16px, 60px);
+	z-index: 100;
+	padding: 0;
+	background-color: $diary;
+	@include breakpoint(lg){
+		display: none;
+	}
+	[data-icon]{
+		margin-left: -7px;
+		margin-right: 0;
+		font-size: 26px;
+		color: #fff;
+	}
 }
 
 // diary menu
@@ -106,22 +202,17 @@
 			text-decoration: none;
 		}
 		&.active [data-icon]:before{
-			// content: "\52";
 			color: $diary;
 		}
 	}
 	[data-icon]{
 		color: $diary-light;
 		margin-right: 0.8rem;
-		// &:before{
-		// 	content: "\5b";
-		// }
 	}
 	// active
 	.diary-menu-item.active{
 		.diary-menu-link{
 			[data-icon]:before{
-				// content: "\52";
 				color: $diary;
 			}
 		}
@@ -139,15 +230,22 @@
 .diary-search{
 	margin-bottom: 0.65rem;
 	.form-inline{
+		flex-flow: row nowrap;
 		justify-content: center;
 	}
 	.form-icon{
 		font-size: 26px;
 		color: $diary;
 	}
+	// datepicker
+	.mat-form-field-infix{
+		width: auto;
+	}
 	.btn-search{
 		display: flex;
 		justify-content: center;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 		[data-icon]{
 			margin-right: 1px;
 		}
@@ -189,16 +287,22 @@
 // post test chart
 .diary-test-chart{
 	position: relative;
-	margin-top: 1rem;
-	margin-bottom: 2rem;
+	// margin-top: 1rem;
+	// margin-bottom: 1rem;
 	padding: 3rem;
 	&#create_chart{
-		width: 88%;
+		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
+		@include breakpoint(md){
+			width: 88%;
+		}
 	}
 	&#post_chart{
-		width: 58%;
+		width: 100%;
+		@include breakpoint(md){
+			width: 58%;
+		}
 	}
 	.diary-test-row{
 		display: flex;
@@ -335,6 +439,22 @@
 	to { transform: scale(1) translateY(0); }
 }
 
+// feeling chart
+.chart-container-bubble{
+	position: relative;
+	// width: 100%;
+	width: calc(100% + 10px);
+	margin-left: -5px;
+	height: 582px * 0.7;
+	@include breakpoint(md){
+		width: 100%;
+		height: 582px * 0.8;
+		margin-left: 0;
+	}
+	@include breakpoint(lg){
+		height: 582px;
+	}
+}
 
 
 

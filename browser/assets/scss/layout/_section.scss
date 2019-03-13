@@ -32,6 +32,60 @@
 	}
 }
 
+// Google搜尋
+.section-search{
+	margin-top: 2rem;
+	@include breakpoint(md){
+		margin-top: 3rem;
+	}
+	@include breakpoint(lg){
+		margin-top: 4rem;
+	}
+	// load more產生的list
+	+ app-google-search > .section-search,
+	+ div > .section-search{
+		margin-top: 0;
+	}
+	// 顯示最後一個load more按鈕, 其他隱藏
+	+ .btn-group-more{
+		display: block;
+	}
+	// load more按鈕, 已無更多資料
+	+ .btn-group-more,
+	+ .text-center{
+	  margin-bottom: 2rem;
+	  @include breakpoint(md){
+	  	margin-bottom: 3rem;
+	  }
+	  @include breakpoint(lg){
+	  	margin-bottom: 4rem;
+	  }
+	}
+	// title
+	.search-title{
+		color: $home-dark;
+		&:hover{
+			color: darken($home-dark, 10%);
+		}
+	}
+	.search-snippet{
+		br{
+			display: none;
+		}
+		b{
+			color: $home;
+			font-weight: normal;
+		}
+	}
+}
+
+// hashtag搜尋
+.section-search-hashtag{
+	display: flex;
+	justify-content: center;
+	min-height: calc(100vh - 318px);
+}
+
 // 背景圖模糊
 .section-bg-blur{
 	position: relative;
@@ -63,6 +117,29 @@
 		height: calc(100vh - 110px);
 	}
 }
+
+// 你可能會喜歡
+.section-recommend{
+	margin-top: 5rem;
+	margin-bottom: -2rem;
+	padding-top: 2rem;
+	border-top: 1px solid $border-color;
+	+ .section-review{
+		margin-top: 2rem;
+	}
+}
+
+// 商品評論
+.section-review{
+	padding-top: 2rem;
+	border-top: 1px solid $border-color;
+}
+
+
+
+
+
+
 
 
 

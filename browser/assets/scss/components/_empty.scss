@@ -1,0 +1,22 @@
+// 
+// Empty
+// 
+
+// base
+[class*="empty-"]{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+// 會員中心
+.empty-member{
+	min-height: calc(100vh - 240px);
+}
+
+// 購物車
+.empty-cart{
+	min-height: calc(100vh - 362px - 8rem);
+}

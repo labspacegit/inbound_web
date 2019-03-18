@@ -22,11 +22,15 @@
 		display: flex;
 		align-items: center;
 	}
-	.upload-image,
+	// .upload-image,
+	// .file-upload,
+	// .upload-video,
+	// .upload-form{
+	// 	float: left;
+	// }
 	.file-upload,
-	.upload-video,
 	.upload-form{
-		float: left;
+		width: 100%;
 	}
 	.upload-image,
 	.upload-video{
@@ -35,6 +39,7 @@
 	.btn-upload{
 		color: $diary-dark;
 		background-color: $diary-light;
+		cursor: pointer;
 	}
 }
 

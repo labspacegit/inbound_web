@@ -17,6 +17,10 @@
 			padding: 0.75rem 0;
 		}
 	}
+	// 網格垂直置中
+	[class*="col-"]{
+		align-self: center;
+	}
 	// link
 	.text-link{
 		color: $home !important;
@@ -31,6 +35,9 @@
 		display: none;
 		@include breakpoint(sm){
 			display: flex;
+		}
+		.table-list-heading{
+			line-height: 1.5;
 		}
 	}
 	// 商品標題

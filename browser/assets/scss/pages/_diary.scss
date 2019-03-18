@@ -2,7 +2,7 @@
 // Diary
 //
 
-// container
+// 日記container
 .diary-container {
 	position: relative;	
   max-width: 1430px;
@@ -10,7 +10,7 @@
   margin-left: auto;
 }
 
-// cover
+// 日記封面
 .diary-cover{
 	@include size(100%, calc(100vw * 1256/750));
 	background: url(assets/img/diary/cover_m.jpg) 50% 50% no-repeat;
@@ -39,19 +39,23 @@
 				margin-bottom: 0;
 			}
 		}
+		.diary-enter-button{
+			display: flex;
+			flex-direction: column;
+		}
 		.btn{
 			@include breakpoint(lg){
-				width: 180px;
+				min-width: 180px;
 			}
 		}
 	}
 }
 
-// my diary
+// 我的日記
 .diary-frame{
-	// @include size(100%, calc(100vh - 50px));
 	display: flex;
 	position: relative;
+	min-height: 600px;
 	background-color: #fff;
 	@include breakpoint(lg){
 		@include size(100%, 813px);
@@ -71,8 +75,8 @@
 		@include absolute(top 0 right 0);
 		@include size(26px, 100%);
 		content: "";
-		background: url(assets/img/diary/bg_right_m.jpg) right top no-repeat;
-		background-size: cover;
+		background: url(assets/img/diary/bg_right_m.jpg) right top repeat-y;
+		background-size: 100% auto;
 		@include breakpoint(lg){
 			@include size(79px, 100%);
 			background: url(assets/img/diary/bg_right.jpg) right top no-repeat;
@@ -80,7 +84,7 @@
 	}
 }
 
-// diary left side
+// 日記左欄
 .diary-side{
 	@include fixed(top 50px left 0);
 	@include size(100%, calc(100% - 50px));
@@ -114,8 +118,8 @@
 	}
 }
 
-// diary main content
-.diary-content{
+// 日記內容
+[class*="diary-content"]{
 	position: relative;
 	flex: 0 0 calc(100% - 1.6rem);
 	max-width: calc(100% - 1.6rem);
@@ -125,12 +129,19 @@
 		flex: 0 0 calc(70% - 5rem);
 		max-width: calc(70% - 5rem);
 	}
+	// 寬度滿版
+	&.diary-content-full{
+		@include breakpoint(lg){
+			flex: 0 0 calc(100% - 5rem);
+			max-width: calc(100% - 5rem);
+		}
+	}
 	.btn-edit{
 		width: 68%;
 	}
 }
 
-// scroller
+// 日記捲軸
 .diary-scroll-container{
 	// @include size();
 	padding: 1rem;
@@ -143,7 +154,7 @@
 	&.has-scroll-bottom{
 		// height: calc(100% - 70px); //減掉底下scroll bottom的高度70px
 		@include breakpoint(lg){
-			height: calc(100% - 86px); //減掉底下scroll bottom的高度86px
+			height: calc(100% - 85px); //減掉底下scroll bottom的高度85px
 			padding-bottom: 0;
 		}
 	}
@@ -159,14 +170,15 @@
 .diary-scroll-bottom{
 	display: flex;
 	justify-content: flex-end;
-	padding: 1rem;
-	background-color: #fff;
+	padding: 1.5rem 1rem;
+	// background-color: #fff;
 	@include breakpoint(lg){
-		justify-content: flex-start;
+		padding-right: 2rem;
+		// justify-content: flex-start;
 	}
 }
 
-// diary menu toggler
+// 日記選單開關
 .diary-toggler{
 	@include fixed(top 83px left 0);
 	@include size(16px, 60px);
@@ -184,7 +196,7 @@
 	}
 }
 
-// diary menu
+// 日記選單
 .diary-menu{
 	list-style: none;
 	margin: 0;
@@ -198,6 +210,7 @@
 		padding: 0.5rem 2rem;
 		font-size: 20px;
 		white-space: nowrap;
+		text-shadow: 0 1px 2px rgba(255,255,255,.65);
 		&:hover{
 			text-decoration: none;
 		}
@@ -208,9 +221,11 @@
 	[data-icon]{
 		color: $diary-light;
 		margin-right: 0.8rem;
+		text-shadow: none;
 	}
 	// active
 	.diary-menu-item.active{
+		background-color: rgba(255,255,255,0.3);
 		.diary-menu-link{
 			[data-icon]:before{
 				color: $diary;
@@ -226,7 +241,7 @@
 	}
 }
 
-// diary search
+// 搜尋日記
 .diary-search{
 	margin-bottom: 0.65rem;
 	.form-inline{
@@ -252,13 +267,8 @@
 	}
 }
 
-// diary read
-.diary-read{
-	// padding-right: 1rem;
-}
-
-// diary read heading
-.diary-heading{
+// 閱讀日記標題
+.diary-read-heading{
 	margin-bottom: 1.5rem;
 	border-bottom: 1px solid $border-color;
 	.row{
@@ -284,12 +294,15 @@
 	}
 }
 
-// post test chart
+// 前後測矩陣圖
 .diary-test-chart{
 	position: relative;
 	// margin-top: 1rem;
 	// margin-bottom: 1rem;
 	padding: 3rem;
+	@include breakpoint(md){
+		padding: 4rem;
+	}
 	&#create_chart{
 		width: 100%;
 		margin-left: auto;
@@ -301,7 +314,7 @@
 	&#post_chart{
 		width: 100%;
 		@include breakpoint(md){
-			width: 58%;
+			width: 62%;
 		}
 	}
 	.diary-test-row{
@@ -322,12 +335,41 @@
 			background-color: lighten($light, 10%);
 		}
 		button{
+			position: relative;
 			width: 100%;
 			padding-bottom: 100%;
 			border: 0;
 			background-color: transparent;
 			cursor: pointer;
+			// pin
+			&:before{
+				@include absolute(top -26px  right -20px);
+				z-index: 1;
+				content: "\e01e";
+				font-family: eleganticons;
+				line-height: 1;
+				color: $diary-dark;
+				font-size: 1.75rem;
+				opacity: 0;
+				pointer-events: none;
+				transform: rotate(30deg);
+				@include breakpoint(md){
+					@include absolute(top -33px  right -26px);
+					font-size: 2.2rem;
+				}
+			}
+			// active
+			&.active{
+				&:before{
+					opacity: 1;
+					animation: pin .3s;
+				}
+			}
 		}
+	}
+	@keyframes pin {
+		from { transform: scale(1.5) translateY(-20px) rotate(30deg); }
+		to { transform: scale(1) translateY(0) rotate(30deg); }
 	}
 	.line-cross{
 		@include absolute(top 1.5rem left 1.5rem);
@@ -337,14 +379,14 @@
 		[class*=line]{
 			position: absolute;
 			&.line-x{
-				top: 50%;
+				top: calc(50% - 1px);
 				left: 0;
 				width: 100%;
 				border-top: 1px solid $diary-dark;
 			}
 			&.line-y{
 				top: 0;
-				left: 50%;
+				left: calc(50% - 1px);
 				height: 100%;
 				border-right: 1px solid $diary-dark;
 			}
@@ -352,17 +394,25 @@
 	}
 	.labels-cross{
 		[class*=label]{
+			@include size(48px);
 			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			padding: 0.5rem;
 			color: #fff;
 			line-height: 1;
-			// border-radius: 0.25rem;
+			text-align: center;
 			background-color: $diary;
+			@include breakpoint(md){
+				@include size(64px);
+			}
 			&.label-top{
 				top: 0;
 				left: 50%;
 				background-color: $diary-green;
 				transform: translateX(-50%);
+
 			}
 			&.label-bottom{
 				bottom: 0;
@@ -384,35 +434,37 @@
 			}
 		}
 	}
-	.labels-around{
-		[class*=label]{
-			position: absolute;
-			padding: 0.5rem;
-			color: $diary;
-			line-height: 1;
-			&.label-top-left{
-				top: 0;
-				left: 0;
-			}
-			&.label-top-right{
-				top: 0;
-				right: 0;
-			}
-			&.label-bottom-right{
-				bottom: 0;
-				right: 0;
-			}
-			&.label-bottom-left{
-				bottom: 0;
-				left: 0;
-			}
-		}
-	}
+	// .labels-around{
+	// 	[class*=label]{
+	// 		position: absolute;
+	// 		padding: 0.5rem;
+	// 		color: $diary;
+	// 		line-height: 1;
+	// 		&.label-top-left{
+	// 			top: 0;
+	// 			left: 0;
+	// 		}
+	// 		&.label-top-right{
+	// 			top: 0;
+	// 			right: 0;
+	// 		}
+	// 		&.label-bottom-right{
+	// 			bottom: 0;
+	// 			right: 0;
+	// 		}
+	// 		&.label-bottom-left{
+	// 			bottom: 0;
+	// 			left: 0;
+	// 		}
+	// 	}
+	// }
 	.pin{
 		@include absolute(top 0 left 0);
 		display: flex;
-		margin-top: -2.5%;
-		margin-left: 1.5%;
+		margin-top: -7.6%;
+		margin-left: 5.6%;
+		// margin-top: -2.5%;
+		// margin-left: 1.5%;
 		// background-color: $diary-light;
 		opacity: 0;
 		pointer-events: none;
@@ -421,7 +473,9 @@
 			font-size: 1.7vw;
 		}
 		&#post_pin{
-			font-size: 2vw;
+			@include breakpoint(md){
+				font-size: 2vw;
+			}
 		}
 		&.active{
 			opacity: 1;
@@ -434,12 +488,12 @@
 		}
 	}
 }
-@keyframes pin {
-	from { transform: scale(1.5) translateY(-20px); }
-	to { transform: scale(1) translateY(0); }
-}
+// @keyframes pin {
+// 	from { transform: scale(1.5) translateY(-20px); }
+// 	to { transform: scale(1) translateY(0); }
+// }
 
-// feeling chart
+// 心情圖譜
 .chart-container-bubble{
 	position: relative;
 	// width: 100%;
@@ -456,7 +510,108 @@
 	}
 }
 
+// 日記背景圖
+.diary-bg-cover{
+	@include absolute(top 0 left 0);
+	@include size();
+	@include breakpoint(lg){
+		padding: 7px 81px 13px 7px;
+	}
+	.diary-bg-cover-img{
+		@include size();
+		@include background-cover();
+		display: flex;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		&:before{
+			@include breakpoint(lg){
+				content: "";
+				flex: 0 0 31.5%;
+				height: 100%;
+				background-color: rgba(255,255,255,0.2);
+			}
+		}
+		&:after{
+			content: "";
+			flex: 1 0 auto;
+			height: 100%;
+			background-color: rgba(255,255,255,0.8);
+		}
+	}
+}
 
+// 日記背景列表
+.diary-bg-list{
+	.diary-bg-list-item{
+		position: relative;
+		margin-bottom: 0.75rem;
+		overflow: hidden;
+		cursor: pointer;
+		// 目前背景
+		&.active{
+			&:after{
+				@include absolute(top 0 left 0);
+				@include size();
+				z-index: 3;
+				content: "";
+				border: 2px solid $diary;
+			}
+		}
+		&:hover{
+			.diary-bg-list-actions{
+				background-color: rgba(60,79,37,0.8);
+				@include breakpoint(lg){
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+	.diary-bg-list-img{
+		@include background-cover();
+		position: relative;
+		padding-bottom: 62%;
+	}
+	.diary-bg-list-actions{
+		@include absolute(bottom 0 left 0);
+		width: 100%;
+		z-index: 2;
+		color: #fff;
+		background-color: rgba(60,79,37,0.8);
+		transform: translateY(0);
+		transition: all .3s;
+		@include breakpoint(lg){
+			background-color: rgba(60,79,37,0);
+			transform: translateY(100%);
+		}
+		.row{
+			min-height: 36px;
+			> [class*="col-"]{
+				align-self: center;
+			}
+		}
+		.diary-bg-list-title{
+			display: block;
+			line-height: 1;
+		}
+	}
+	// 設為背景
+	.btn-set-bg{
+		@include absolute(top 0 left 0);
+		@include size();
+		@include text-hide();
+		z-index: 1;
+		padding: 0;
+	}
+	// 刪除背景
+	.btn-delete-bg{
+		padding: 0;
+		background-color: transparent;
+		[data-icon]{
+			top: 0;
+			color: #fff;
+		}
+	}
+}
 
 
 

@@ -48,12 +48,6 @@
   line-height: 1.1;
 }
 
-// truncate
-.text-truncate{
-  position: relative;
-  top: -1px;
-}
-
 // multiline
 .text-multiline {
   @include multi-ellipsis($lineHeight: 1.4em, $lineCount: 2, $bgColor: white);

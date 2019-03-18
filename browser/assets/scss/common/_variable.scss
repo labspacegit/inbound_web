@@ -41,11 +41,11 @@ $writer: $gray-dark;
 $writer-light: $gray;
 $writer-dark: $dark;
 // 日記本
-$diary: #a0aa58;
-$diary-light: #d5dabc;
-$diary-dark: #3c4f25;
+$diary: #a0aa58; // rgba(160,170,88,1)
+$diary-light: #d5dabc; // rgba(213,218,188,1)
+$diary-dark: #3c4f25; // rgba(60,79,37,1)
 $diary-green: #a3c275;
-$diary-green-light: #dbe6b5;
+$diary-green-light: darken(#dbe6b5, 10%);
 // 會員專區
 $member: $gray-dark;
 $member-light: $gray;

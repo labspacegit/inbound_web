@@ -45,7 +45,8 @@
 }
 .row + .btn-group-more,
 .form-row + .btn-group-more,
-.card-row + .btn-group-more{
+.card-row + .btn-group-more,
+.more-data + .btn-group-more{
   display: block;
 }
 .row + div + .btn-group-more,

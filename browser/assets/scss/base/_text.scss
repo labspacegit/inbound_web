@@ -6,17 +6,17 @@
 // theme color
 @each $color, $value in $theme-colors {
   .text-#{$color} {
-    color: #{$value};
+    color: #{$value} !important;
   }
 }
 @each $color, $value in $theme-lights {
   .text-#{$color} {
-    color: #{$value};
+    color: #{$value} !important;
   }
 }
 @each $color, $value in $theme-darks {
   .text-#{$color} {
-    color: #{$value};
+    color: #{$value} !important;
   }
 }
 

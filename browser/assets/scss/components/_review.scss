@@ -1,0 +1,92 @@
+// 
+// Review
+// 
+
+// 評價留言
+.review{
+	margin-bottom: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid $border-color;
+	@include breakpoint(md){
+		margin-bottom: 1.5rem;
+		padding-top: 1.5rem;
+	}
+	&:last-child{
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid  $border-color;
+	}
+	.review-left{
+		display: flex;
+		margin-bottom: 0.5rem;
+		@include breakpoint(md){
+			margin-bottom: 0;
+		}
+		.review-detail{
+			width: 74%;
+		}
+	}
+	.review-right{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+// 星級評分
+// Pure CSS Star Rating Widget
+// A PEN BY James Barnett
+// https://codepen.io/jamesbarnett/pen/vlpkh
+.review-stars {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  > input {
+    display: none;
+  }
+  > label{
+    color: $font-light;
+    margin-bottom: 0;
+    cursor: pointer;
+    &:before{
+      margin-right: 0.25rem;
+      font-size: 2rem;
+      display: inline-block;
+      content: "\e031";
+    }
+    // unfilled
+    &.unfilled{
+      cursor: default;
+      &:before{
+        content: "\e033";
+      }
+    }
+    // filled
+    &.filled{
+      cursor: default;
+      &:before{
+        color: #f3c05a;
+        content: "\e033";
+      }
+    }
+  }
+  // small size stars
+  &.review-stars-small{
+    > label{
+      &:before{
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.review-stars > input:checked ~ label:not(.unfilled):before, /* show gold star when clicked */
+.review-stars:not(:checked) > label:not(.unfilled):hover:before, /* hover current star */
+.review-stars:not(:checked) > label:not(.unfilled):hover ~ label:not(.unfilled):before { color: #f3c05a; content: "\e033"; } /* hover previous stars in list */
+
+.review-stars > input:checked + label:not(.unfilled):hover, /* hover current star when changing rating */
+.review-stars > input:checked ~ label:not(.unfilled):hover,
+.review-stars > label:not(.unfilled):hover ~ input:checked ~ label:not(.unfilled), /* lighten current selection */
+.review-stars > input:checked ~ label:not(.unfilled):hover ~ label:not(.unfilled) { color: #f3c05a; content: "\e033"; } 
+
+

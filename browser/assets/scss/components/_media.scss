@@ -23,8 +23,11 @@
 	@include breakpoint(md){
 		align-items: stretch;
 	}
-	a, a:hover{
+	a{
 		color: inherit;
+	}
+	a:hover{
+		color: $font-dark;
 		text-decoration: none;
 	}
 	// header
@@ -133,7 +136,7 @@
 		.media-button{
 			margin-top: 1rem;
 			@include breakpoint(md){
-				margin-top: 0;
+				margin-top: 0.5rem;
 			}
 		}
 	}
@@ -238,6 +241,7 @@
 		font-size: 15px;
 		color: currentColor;
 		&:hover{
+			color: currentColor;
 			text-decoration: underline !important;
 		}
 	}

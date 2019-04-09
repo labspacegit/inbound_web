@@ -5,12 +5,41 @@
 // 從後台編輯器來的內容
 // 商品說明 課程介紹 文章內容 活動說明 閱讀日記
 .content-detail{
+	margin-top: 1.625rem;
+	padding-top: 1.625rem;
+	font-size: 18px !important;
+	line-height: 1.625;
+	border-top: 1px solid $border-color;
 	img{
 		max-width: 100% !important;
 		height:auto !important;
 	}
 	iframe, video{
 		max-width: 100% !important;
+	}
+	// 引用
+	blockquote {
+		font-size: 18px !important;
+    font-style: italic;
+		line-height: 1.625;
+    border-left: 4px solid #ccc;
+    color: #999;
+    margin: 0 0 1.625rem 1.625rem;
+    padding-left: 1rem;
+		p{
+			margin-bottom: 0px;
+		}
+	}
+	h1, h2, h3, h4, h5, h6{
+		margin-bottom: 1.625rem;
+	}
+	p{
+		margin-bottom: 1.625rem;
+		font-size: 18px !important;
+	}
+	ol, ul, dl{
+		margin-bottom: 1.625rem;
+		font-size: 18px !important;
 	}
 }
 

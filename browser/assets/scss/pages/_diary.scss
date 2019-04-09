@@ -13,11 +13,11 @@
 // 日記封面
 .diary-cover{
 	@include size(100%, calc(100vw * 1256/750));
-	background: url(assets/img/diary/cover_m.jpg) 50% 50% no-repeat;
+	background: url(assets/img/diary/cover_m_v2.jpg) 50% 50% no-repeat;
 	background-size: cover;
-	@include breakpoint(lg){
+	@include breakpoint(md){
 		@include size(100%, 813px);
-		background: url(assets/img/diary/cover.jpg) 50% 50% no-repeat;
+		background: url(assets/img/diary/cover_v2.jpg) 50% 50% no-repeat;
 	}
 	.diary-enter{
 		@include absolute(top 60% left 0);
@@ -26,7 +26,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		@include breakpoint(lg){
+		@include breakpoint(md){
 			flex-direction: row;
 			top: 68%;
 		}
@@ -34,7 +34,7 @@
 			@include size(86px);
 			margin-right: 0;
 			margin-bottom: 1rem;
-			@include breakpoint(lg){
+			@include breakpoint(md){
 				@include size(120px);
 				margin-right: 1.5rem;
 				margin-bottom: 0;
@@ -45,7 +45,7 @@
 			flex-direction: column;
 		}
 		.btn{
-			@include breakpoint(lg){
+			@include breakpoint(md){
 				min-width: 180px;
 			}
 		}
@@ -277,8 +277,8 @@
 
 // 閱讀日記標題
 .diary-read-heading{
-	margin-bottom: 1.5rem;
-	border-bottom: 1px solid $border-color;
+	// margin-bottom: 1.5rem;
+	// border-bottom: 1px solid $border-color;
 	.row{
 		> .col,
 		> [class*="col-"] {
@@ -299,6 +299,9 @@
 		margin-top: 1rem;
 		margin-bottom: 0.25rem;
 		color: $font-gray;
+		@include breakpoint(md){
+			margin-top: 0;
+		}
 	}
 }
 
@@ -316,6 +319,16 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		.diary-test-cell{
+			button{
+				&:before{
+					@include breakpoint(md){
+						top: -16px;
+						right: -10px;
+					}
+				}
+			}
+		}		
 	}
 	&#post_chart{
 		width: 100%;
@@ -337,14 +350,17 @@
 		}
 	}
 	.diary-test-cell{
+		position: relative;
 		display: flex;
 		width: 10%;
+		padding-bottom: 10%;
 		border-right: 1px solid $border-color;
-		&:hover{
-			background-color: lighten($light, 10%);
-		}
+		// &:hover{
+		// 	background-color: lighten($light, 10%);
+		// }
 		button{
-			position: relative;
+			@include absolute(top 50% left 50%);
+			z-index: 1;
 			width: 100%;
 			padding-bottom: 100%;
 			border: 0;
@@ -352,8 +368,10 @@
 			cursor: pointer;
 			// pin
 			&:before{
-				@include absolute(top -26px  right -20px);
+				@include absolute(top 50% left 50%);
 				z-index: 1;
+				margin-top: -25px;
+				margin-left: -8px;
 				content: "\e01e";
 				font-family: eleganticons;
 				line-height: 1;
@@ -363,7 +381,8 @@
 				pointer-events: none;
 				transform: rotate(30deg);
 				@include breakpoint(md){
-					@include absolute(top -33px  right -26px);
+					margin-top: -33px;
+					margin-left: -9px;
 					font-size: 2.2rem;
 				}
 			}
@@ -381,10 +400,14 @@
 		to { transform: scale(1) translateY(0) rotate(30deg); }
 	}
 	.line-cross{
-		@include absolute(top 1.5rem left 1.5rem);
-		@include size(calc(100% - 3rem));
+		@include absolute(top 3rem left 3rem);
+		@include size(calc(100% - 6rem));
 		overflow: hidden;
 		pointer-events: none;
+		@include breakpoint(md){
+			@include absolute(top 4rem left 4rem);
+			@include size(calc(100% - 8rem));
+		}
 		[class*=line]{
 			position: absolute;
 			&.line-x{
@@ -403,43 +426,55 @@
 	}
 	.labels-cross{
 		[class*=label]{
-			@include size(48px);
+			@include size(72px);
 			position: absolute;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: 0.5rem;
-			color: #fff;
+			padding: 0.75rem;
+			color: $diary-green;
+			font-weight: bold;
 			line-height: 1;
 			text-align: center;
-			background-color: $diary;
 			@include breakpoint(md){
-				@include size(64px);
+				@include size(84px);
+				font-size: 1.25rem;
 			}
 			&.label-top{
-				top: 0;
+				top: -24px;
 				left: 50%;
-				background-color: $diary-green;
+				align-items: flex-end;
 				transform: translateX(-50%);
-
+				@include breakpoint(md){
+					top: -20px;
+				}
 			}
 			&.label-bottom{
-				bottom: 0;
+				bottom: -24px;
 				left: 50%;
-				background-color: $diary-green-light;
+				align-items: flex-start;
 				transform: translateX(-50%);
+				@include breakpoint(md){
+					bottom: -20px;
+				}
 			}
 			&.label-left{
 				top: 50%;
-				left: 0;
-				background-color: $diary-green-light;
+				left: -24px;
+				justify-content: flex-end;
 				transform: translateY(-50%);
+				@include breakpoint(md){
+					left: -20px;
+				}
 			}
 			&.label-right{
 				top: 50%;
-				right: 0;
-				background-color: $diary-green;
+				right: -24px;
+				justify-content: flex-start;
 				transform: translateY(-50%);
+				@include breakpoint(md){
+					right: -20px;
+				}
 			}
 		}
 	}

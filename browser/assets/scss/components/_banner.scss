@@ -1,0 +1,44 @@
+//
+// Banner
+//
+
+// 刊頭輪播banner
+.banner-header{
+	.banner-header-img {
+	  @include background-cover();
+	  width: 100%;
+	  padding-bottom: 59%;
+	  @include breakpoint(md){
+	  	height: 430px;
+	  	padding-bottom: 0;
+	  }
+	}
+}
+
+// 首頁輪播banner
+.banner-header-home{
+	.banner-header-img {
+		@include background-cover();
+	  padding-bottom: 114%;
+	  @include breakpoint(md){
+	  	height: calc(100vh - 110px);
+	  	padding-bottom: 0;
+	  }
+	}
+	// owl carousel
+	.owl-dots{
+		bottom: 3rem !important;
+	}
+	// 顯示首頁banner下箭頭
+	.custom-arrow{
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+

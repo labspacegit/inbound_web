@@ -6,7 +6,7 @@
 .icon-favorite{
 	@include absolute(top 1rem right 1.5rem);
 	font-size: 1.75rem;
-	color: currentColor !important;
+	color: $home !important;
 	@include breakpoint(md){
 		top: 1.5rem;
 		right: 2rem;
@@ -33,7 +33,7 @@
 
 // 下箭頭 預設隱藏
 .custom-arrow{
-	display: none;
+	// display: none;
 	position: absolute;
   width: 30px;
   height: 30px;

@@ -46,6 +46,10 @@ hr, .hr{
 	border-top: 1px solid $border-color;
 }
 
+[hidden]{
+	display: none !important;
+}
+
 // 隱藏input箭頭按鈕
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

@@ -34,12 +34,12 @@
   }
 }
 
-// load more
+// 查看更多
 .btn-group-more{
 	// margin-top: 2rem;
 	text-align: center;
 }
-// 顯示最後一個load more按鈕, 其他隱藏
+// 顯示最後一個查看更多按鈕, 其他隱藏
 .btn-group-more{
   display: none;
 }
@@ -61,7 +61,7 @@
   }
 }
 
-// add cart
+// 加入購物車
 .btn-group-cart{
   display: flex;
   flex-direction: column;
@@ -70,7 +70,23 @@
   }
 }
 
-// buy later
+// 書架式加入購物車+數量
+.btn-group-list-qty{
+  .btn-group-cart{
+    display: flex;
+    flex-direction: column;
+    .form-group-qty{
+      margin-top: 1rem;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .btn{
+      margin-top: 0 !important;
+    }
+  }
+}
+
+// 下次再買
 .btn-group-buylater{
   .btn{
     width: 100%;

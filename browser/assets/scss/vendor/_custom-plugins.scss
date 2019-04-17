@@ -155,9 +155,9 @@
 }
 // theme
 .theme-test .swiper-pagination{ background-color: $test-light; }
-.theme-course .swiper-pagination{ background-color: $course-light; }
+// .theme-course .swiper-pagination{ background-color: $course-light; }
 .theme-article .swiper-pagination{ background-color: $article-light; }
-.theme-activity .swiper-pagination{ background-color: $activity-light; }
+// .theme-activity .swiper-pagination{ background-color: $activity-light; }
 
 // 
 // dialog
@@ -265,6 +265,29 @@
 		margin: 0 0.5rem;
 	}
 }
+
+// 
+// sweet alert 2
+// 
+.swal2-popup .swal2-styled.swal2-confirm{
+	background-color: $home !important;
+}
+.swal2-popup .swal2-styled:focus{
+	box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

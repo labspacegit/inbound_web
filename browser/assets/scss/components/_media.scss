@@ -27,7 +27,7 @@
 		color: inherit;
 	}
 	a:hover{
-		color: $font-dark;
+		// color: $font-dark;
 		text-decoration: none;
 	}
 	// header
@@ -62,16 +62,6 @@
 		.media-info{
 			padding-top: 0.5rem;
 			border-top: 1px solid currentColor;
-			.media-avatar{
-				display: flex;
-				align-items: center;
-				padding-bottom: 0.5rem;
-				border-bottom: 1px solid currentColor;
-				.avatar-text{
-					color: $font-color;
-					font-size: 15px;
-				}
-			}
 			.media-summary{
 				margin-bottom: 0.5rem;
 				padding: 0.5rem 0;
@@ -133,6 +123,18 @@
 		@include breakpoint(md){
 			padding: 0.75rem 1rem;
 		}
+		.media-info{
+			.media-avatar{
+				display: flex;
+				align-items: center;
+				padding-bottom: 0.5rem;
+				border-bottom: 1px solid currentColor;
+				.avatar-text{
+					color: $font-color;
+					font-size: 15px;
+				}
+			}
+		}
 		.media-button{
 			margin-top: 1rem;
 			@include breakpoint(md){
@@ -149,7 +151,10 @@
 		border-bottom: 0;
 	}
 	.media-header{
-		width: 35%;
+		width: 45%;
+		@include breakpoint(md){
+			width: 35%;
+		}
 		.media-img{
 			height: 210px;
 			@include breakpoint(md){
@@ -157,15 +162,18 @@
 			}
 		}
 		.media-img-h-400{
-			height: 411px;
+			height: 413px;
 			@include breakpoint(md){
 				height: 400px;
 			}
 		}
 	}
 	.media-body{
-		width: 65%;
+		width: 55%;
 		padding: 0.75rem 1rem;
+		@include breakpoint(md){
+			width: 65%;
+		}
 		.media-button-absolute{
 			margin-top: 0.5rem;
 			@include breakpoint(md){
@@ -215,8 +223,23 @@
 			}
 		}
 	}
+	// ngx-gallery
+	.media-gallery{
+		position: relative;
+		padding-bottom: 128%;
+		.ngx-gallery-layout{
+			@include absolute(top 0 left 0);
+		}
+	}
 	.media-body{
 		.media-info{
+			.media-avatar{
+				display: flex;
+				align-items: center;
+				.avatar-text{
+					color: $font-color;
+				}
+			}
 			.media-summary,
 			.media-text{
 				font-size: 1rem;

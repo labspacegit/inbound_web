@@ -211,9 +211,9 @@
 		height: 68%;
 		border: 6px solid $ebook-light;
 	}
-	.card-img-top{
-		padding-bottom: 137%;
-	}
+	// .card-img-top{
+	// 	padding-bottom: 137%;
+	// }
 }
 
 // 線上課程
@@ -265,23 +265,17 @@
   }
 }
 .card-book{
-	// height: 385px;
 	margin-bottom: 1rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.75rem;
 	@include breakpoint(md){
 		margin-bottom: 2rem;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
 	}
+	// 日記本白底
 	&:before, &:after{
 		position: absolute;
 		top: 0;
-		z-index: 1;
+		z-index: 0;
 		content: "";
 		height: 100%;
-		border: 1px solid $border-dark;
-		opacity: 0.5;
 		pointer-events: none;
 		box-shadow: 4px 4px 4px -3px rgba(0,0,0,.2);
 	}
@@ -289,10 +283,12 @@
 		left: 0;
 		width: 4%;
 		margin-right: 2px;
+		background-color: #fff;
 	}
 	&:after{
 		right: 0;
 		width: calc(96% - 2px);
+		background-color: #fff;
 	}
 	.card-title{
 		margin-bottom: 0.5rem;
@@ -306,14 +302,40 @@
 		}
 	}
 	.card-body{
+		position: relative;
+		z-index: 1;
+		padding-top: 0.5rem;
+		padding-bottom: 0.75rem;
+		@include breakpoint(md){
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+		// 日記本邊框
+		&:before, &:after{
+			position: absolute;
+			top: 0;
+			z-index: 2;
+			content: "";
+			height: 100%;
+			border: 1px solid $border-dark;
+			opacity: 0.5;
+			pointer-events: none;
+		}
+		&:before{
+			left: 0;
+			width: 4%;
+			margin-right: 2px;
+		}
+		&:after{
+			right: 0;
+			width: calc(96% - 2px);
+		}
 		.card-img-center{
 			@include background-cover();
 			position: relative;
-			// height: 140px;
 			padding-bottom: 50%;
 		}
 		.card-summary{
-			// margin-bottom: 0.5rem;
 			padding: 0.35rem 0.75rem 0.25rem 1.75rem;
 			font-size: 15px;
 			background-color: $diary-light;
@@ -359,14 +381,8 @@
 // 已購商品
 .card-myproduct{
 	margin-bottom: 1rem;
-	.card-link{
-		@include size();
-		display: flex;
-		flex: 1 0 0%;
-		flex-direction: column;
-	}
 	.card-img-top{
-		padding-bottom: 80%;
+		padding-bottom: 100%;
 	}
 	.card-body{
 		padding: 0.75rem;
@@ -376,12 +392,15 @@
 	}
 	.card-footer{
 		padding-top: 0;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
 		border-top: 0;
 		background-color: transparent;
 	}
 	.card-avatar{
 		display: flex;
 		align-items: center;
+		margin-left: 0.25rem;
 	}
 }
 
@@ -389,7 +408,7 @@
 .card-mytest{
 		margin-bottom: 1rem;
 	.card-img-top{
-		padding-bottom: 80%;
+		padding-bottom: 100%;
 	}
 }
 

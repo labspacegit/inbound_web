@@ -16,13 +16,14 @@
 		color: #fff;
 		line-height: 1.8;
 		@include breakpoint(md){
-			white-space:pre-wrap;
+			white-space: pre-wrap;
 		}
 	}
 }
 
 // contents
 .section-contents{
+	min-height: 420px;
 	padding: 2rem 0;
 	@include breakpoint(md){
 		padding: 3rem 0;
@@ -41,16 +42,16 @@
 	@include breakpoint(lg){
 		margin-top: 4rem;
 	}
-	// load more產生的list
+	// 查看更多產生的list
 	+ app-google-search > .section-search,
 	+ div > .section-search{
 		margin-top: 0;
 	}
-	// 顯示最後一個load more按鈕, 其他隱藏
+	// 顯示最後一個查看更多按鈕, 其他隱藏
 	+ .btn-group-more{
 		display: block;
 	}
-	// load more按鈕, 已無更多資料
+	// 查看更多按鈕, 已無更多資料
 	+ .btn-group-more,
 	+ .text-center{
 	  margin-bottom: 2rem;
@@ -86,6 +87,11 @@
 	min-height: calc(100vh - 318px);
 }
 
+// 首頁輪播banner
+.section-banner-home{
+	position: relative;
+}
+
 // 背景圖模糊
 .section-bg-blur{
 	position: relative;
@@ -118,23 +124,22 @@
 	}
 }
 
-// 你可能會喜歡
-.section-recommend{
-	margin-top: 5rem;
-	margin-bottom: -2rem;
-	padding-top: 2rem;
-	border-top: 1px solid $border-color;
-	+ .section-review{
-		margin-top: 2rem;
-	}
-}
-
-// 商品評論
+// 評價留言
 .section-review{
 	padding-top: 2rem;
 	// border-top: 1px solid $border-color;
 }
 
+// 你可能會喜歡
+.section-recommend{
+	margin-top: 2rem;
+	margin-bottom: -2rem;
+	padding-top: 2rem;
+	border-top: 1px solid $border-color;
+	// + .section-review{
+	// 	margin-top: 2rem;
+	// }
+}
 
 
 

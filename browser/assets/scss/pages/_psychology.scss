@@ -90,10 +90,33 @@
 	}
 }
 
+// 結果說明文字
+.test-result-text{
+	a{
+		color: $test;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	img{
+		max-width: 100% !important;
+		height: auto !important;
+	}
+	*:not(h1):not(h2):not(h3):not(h4):not(h5){
+		font-size: 18px !important;
+	}
+}
+
 // 結果圖表
 .chart-container{
 	position: relative;
 	margin: 0 auto;
+	// 覆蓋透明div來取消圖表mouseover
+	&:after{
+		@include absolute(top 0 left 0);
+		@include size();
+		content: "";
+	}
 	&.radar{
 		@include breakpoint(md){
 			width: 70%;

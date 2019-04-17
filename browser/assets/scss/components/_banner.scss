@@ -27,7 +27,10 @@
 	}
 	// owl carousel
 	.owl-dots{
-		bottom: 3rem !important;
+		bottom: 2rem !important;
+		@include breakpoint(md){
+			bottom: 3rem !important;
+		}
 	}
 	// 顯示首頁banner下箭頭
 	.custom-arrow{

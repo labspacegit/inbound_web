@@ -39,10 +39,13 @@
   height: 30px;
   left: 50%;
   margin-left: -15px;
-  bottom: 15px;
+  bottom: 7px;
   z-index: 10;
   color: inherit;
   transition: opacity 0.3s ease 0.5s;
+  @include breakpoint(md){
+		bottom: 15px;
+	}	
   &:hover{
   	color: inherit;
   }

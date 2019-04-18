@@ -95,12 +95,17 @@
 	// datepicker
 	.mat-form-field{
 		width: 100%;
-		@include breakpoint(md){
-			width: calc(50% - 10px);
-		}
+		// @include breakpoint(md){
+		// 	width: calc(50% - 10px);
+		// }
 	}
 	.mat-form-field-infix{
 		border-top: 0;
+	}
+	.form-row-email{
+		@include breakpoint(md){
+			margin-top: -1.25em !important
+		}
 	}
 }
 

@@ -11,6 +11,9 @@
 		color: inherit;
 		text-decoration: none;
 	}
+	p{
+		font-size: 1rem !important;
+	}
 	.card-header{
 		border-bottom: 0;
 		border-radius: 0;
@@ -80,7 +83,7 @@
 		.card-text{
 			@include ellipsis();
 			margin-bottom: 0;
-			font-size: 15px;
+			font-size: 15px !important;
 			color: $font-color;
 		}
 	}
@@ -113,7 +116,7 @@
 			padding-bottom: 0.25rem;
 			border-top: 1px solid currentColor;
 			border-bottom: 1px solid currentColor;
-			font-size: 15px;
+			font-size: 15px !important;
 			&.multiline{
 				height: 52px;
 				span{
@@ -186,7 +189,7 @@
 			margin-bottom: 0.25rem;
 			.avatar-text{
 				color: $font-color;
-				font-size: 15px;
+				font-size: 15px !important;
 			}
 		}
 		.card-title, .card-text, .card-avatar, .btn-group-block{
@@ -208,7 +211,7 @@
 // 電子書
 .card-border-ebook{
 	&:before{
-		height: 68%;
+		// height: 68%;
 		border: 6px solid $ebook-light;
 	}
 	// .card-img-top{
@@ -219,7 +222,7 @@
 // 線上課程
 .card-border-course{
 	&:before{
-		height: 84%;
+		// height: 84%;
 		border: 6px solid $course-light;
 	}
 }
@@ -227,7 +230,7 @@
 // 實體活動 作者商品列表用
 .card-border-activity{
 	&:before{
-		height: 84%;
+		// height: 84%;
 		border: 6px solid $activity-light;
 	}
 }
@@ -235,12 +238,12 @@
 // 作者專區
 .card-border-writer{
 	&:before{
-		height: 84%;
+		// height: 84%;
 		border: 6px solid $writer-light;
 	}
-	.card-img-top{
-		padding-bottom: 135%;
-	}
+	// .card-img-top{
+	// 	padding-bottom: 135%;
+	// }
 	.card-text:first-child{
 		margin-top: 0.5rem;
 	}
@@ -249,7 +252,7 @@
 // 你可能會喜歡
 .card-border-recommend{
 	&:before{
-		height: 77%;
+		// height: 77%;
 		border: 6px solid currentColor;
 	}
 }
@@ -337,7 +340,7 @@
 		}
 		.card-summary{
 			padding: 0.35rem 0.75rem 0.25rem 1.75rem;
-			font-size: 15px;
+			font-size: 15px !important;
 			background-color: $diary-light;
 			&.multiline{
 				height: 76px;
@@ -366,7 +369,7 @@
 	word-wrap: break-word;
 	a{
 		margin-right: 0.25rem;
-		font-size: 15px;
+		font-size: 15px !important;
 		color: currentColor;
 		&:hover{
 			text-decoration: underline !important;

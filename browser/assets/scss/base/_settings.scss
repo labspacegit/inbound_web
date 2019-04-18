@@ -39,6 +39,24 @@ label{
 	margin-bottom: 0.3rem;
 }
 
+p{
+	font-size: 18px !important;
+}
+
+// 引用
+blockquote {
+	font-size: 18px !important;
+  font-style: italic;
+	line-height: 1.625;
+  border-left: 4px solid #ccc;
+  color: #999;
+  margin: 0 0 1.625rem 1.625rem;
+  padding-left: 1rem;
+	p{
+		margin-bottom: 0px;
+	}
+}
+
 // 分隔線
 hr, .hr{
 	margin-top: 1rem;

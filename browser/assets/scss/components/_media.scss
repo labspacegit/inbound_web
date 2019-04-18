@@ -65,7 +65,7 @@
 			.media-summary{
 				margin-bottom: 0.5rem;
 				padding: 0.5rem 0;
-				font-size: 15px;
+				// font-size: 15px !important;
 				border-bottom: 1px solid currentColor;
 				&.single-line{
 					height: auto;
@@ -88,7 +88,7 @@
 				@include ellipsis();
 				margin-bottom: 0;
 				color: $font-color;
-				font-size: 15px;
+				// font-size: 15px !important;
 			}
 		}
 	}
@@ -124,6 +124,9 @@
 			padding: 0.75rem 1rem;
 		}
 		.media-info{
+			.media-summary{
+				font-size: 15px !important;
+			}
 			.media-avatar{
 				display: flex;
 				align-items: center;
@@ -131,14 +134,17 @@
 				border-bottom: 1px solid currentColor;
 				.avatar-text{
 					color: $font-color;
-					font-size: 15px;
+					font-size: 15px !important;
 				}
+			}
+			.media-text{
+				font-size: 15px !important;
 			}
 		}
 		.media-button{
 			margin-top: 1rem;
 			@include breakpoint(md){
-				margin-top: 0.5rem;
+				margin-top: 0.5rem !important;
 			}
 		}
 	}
@@ -194,6 +200,9 @@
 .media-lead{
 	border-top: 0;
 	border-bottom: 0;
+	p{
+		font-size: 1rem !important;
+	}
 	// 手機版圖片寬滿版
 	&.media-lead-img-full{
 		margin-top: -2rem;
@@ -242,12 +251,12 @@
 			}
 			.media-summary,
 			.media-text{
-				font-size: 1rem;
+				font-size: 1rem !important;
 			}
 		}
 		.media-hashtag{
 			a{
-				font-size: 1rem;
+				font-size: 1rem !important;
 			}
 		}
 	}

@@ -13,11 +13,11 @@
 // 日記封面
 .diary-cover{
 	@include size(100%, calc(100vw * 1256/750));
-	background: url(assets/img/diary/cover_m_v2.jpg) 50% 50% no-repeat;
+	background: url(/assets/img/diary/cover_m_v2.jpg) 50% 50% no-repeat;
 	background-size: cover;
 	@include breakpoint(md){
 		@include size(100%, 813px);
-		background: url(assets/img/diary/cover_v2.jpg) 50% 50% no-repeat;
+		background: url(/assets/img/diary/cover_v2.jpg) 50% 50% no-repeat;
 	}
 	.diary-enter{
 		@include absolute(top 60% left 0);
@@ -62,25 +62,25 @@
 		@include size(100%, 813px);
 		padding-top: 8px;
 		padding-bottom: 14px;
-		background: url(assets/img/diary/bg_body.jpg) center top repeat-x;
+		background: url(/assets/img/diary/bg_body.jpg) center top repeat-x;
 	}
 	&:before{
 		@include breakpoint(lg){
 			@include absolute(top 0 left 0);
 			@include size(50px, 100%);
 			content: "";
-			background: url(assets/img/diary/bg_left.jpg) left top no-repeat;
+			background: url(/assets/img/diary/bg_left.jpg) left top no-repeat;
 		}
 	}
 	&:after{
 		@include absolute(top 0 right 0);
 		@include size(26px, 100%);
 		content: "";
-		background: url(assets/img/diary/bg_right_m.jpg) right top repeat-y;
+		background: url(/assets/img/diary/bg_right_m.jpg) right top repeat-y;
 		background-size: 100% auto;
 		@include breakpoint(lg){
 			@include size(79px, 100%);
-			background: url(assets/img/diary/bg_right.jpg) right top no-repeat;
+			background: url(/assets/img/diary/bg_right.jpg) right top no-repeat;
 		}
 	}
 }
@@ -509,23 +509,43 @@
 }
 
 // 日記背景圖
-.diary-bg-cover{
+.diary-bg{
 	@include absolute(top 0 left 0);
 	@include size();
 	@include breakpoint(lg){
 		padding: 7px 81px 13px 7px;
 	}
-	.diary-bg-cover-img{
+	.diary-bg-img{
 		@include size();
 		@include background-cover();
 		display: flex;
 		border-top-left-radius: 4px;
 		border-bottom-left-radius: 4px;
-		&:after{
-			@include size();
-			content: "";
-			background-color: rgba(255,255,255,0.8);
+		// 覆蓋白底左欄
+		&:before{
+			@include breakpoint(lg){
+				content: "";
+				flex: 0 0 31.5%;
+				height: 100%;
+				background-color: rgba(255,255,255,0.2);
+			}
 		}
+		// 覆蓋白底右欄
+ 		&:after{
+ 			content: "";
+			flex: 1 0 auto;
+			height: 100%;
+ 			background-color: rgba(255,255,255,0.8);
+ 		}
+ 		// 編輯日記 後測 覆蓋滿版白底
+ 		&.diary-bg-overlay-full{
+			&:before{
+				display: none;
+			}
+			&:after{
+				@include size();
+	 		}
+ 		}
 	}
 }
 

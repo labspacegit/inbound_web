@@ -1,0 +1,16 @@
+//
+// Error
+//
+
+.error-page{
+	@include size(100vw, 100vh);
+	background: #fff url(/assets/img/error.png) 50% 50% no-repeat;
+	background-size: 200% auto;
+	@include breakpoint(lg){
+		background-size: cover;
+	}	
+	.error-page-link{
+		@include absolute(top 0 left 0);
+		@include size();
+	}
+}

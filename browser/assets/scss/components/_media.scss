@@ -162,7 +162,8 @@
 			width: 35%;
 		}
 		.media-img{
-			height: 210px;
+			padding-bottom: 0;
+			height: 223px;
 			@include breakpoint(md){
 				height: 200px;
 			}

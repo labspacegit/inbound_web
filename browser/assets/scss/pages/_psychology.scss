@@ -111,12 +111,6 @@
 .chart-container{
 	position: relative;
 	margin: 0 auto;
-	// 覆蓋透明div來取消圖表mouseover
-	// &:after{
-	// 	@include absolute(top 0 left 0);
-	// 	@include size();
-	// 	content: "";
-	// }
 	&.radar{
 		@include breakpoint(md){
 			width: 70%;

@@ -14712,6 +14712,7 @@ var i2 = __webpack_require__(/*! @angular/router */ "@angular/router");
 var i3 = __webpack_require__(/*! @angular/common */ "@angular/common");
 var i4 = __webpack_require__(/*! ./message-info.component */ "./src/app/member/message-info/message-info.component.ts");
 var i5 = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+var i6 = __webpack_require__(/*! ../member.service */ "./src/app/member/member.service.ts");
 var styles_MessageInfoComponent = [i0.styles];
 var RenderType_MessageInfoComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_MessageInfoComponent, data: {} });
 exports.RenderType_MessageInfoComponent = RenderType_MessageInfoComponent;
@@ -14720,7 +14721,7 @@ function View_MessageInfoComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld
         ad = (pd_0 && ad);
     } return ad; }, null, null)), i1.ɵdid(11, 671744, null, 0, i2.RouterLinkWithHref, [i2.Router, i2.ActivatedRoute, i3.LocationStrategy], { routerLink: [0, "routerLink"] }, null), (_l()(), i1.ɵted(-1, null, ["\u8A0A\u606F\u901A\u77E5\u5217\u8868"]))], function (_ck, _v) { var currVal_5 = "../../mail"; _ck(_v, 11, 0, currVal_5); }, function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.mail.subject; _ck(_v, 5, 0, currVal_0); var currVal_1 = _co.mail.created_at; _ck(_v, 8, 0, currVal_1); var currVal_2 = _co.mail.content; _ck(_v, 9, 0, currVal_2); var currVal_3 = i1.ɵnov(_v, 11).target; var currVal_4 = i1.ɵnov(_v, 11).href; _ck(_v, 10, 0, currVal_3, currVal_4); }); }
 exports.View_MessageInfoComponent_0 = View_MessageInfoComponent_0;
-function View_MessageInfoComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-message-info", [], null, null, null, View_MessageInfoComponent_0, RenderType_MessageInfoComponent)), i1.ɵdid(1, 114688, null, 0, i4.MessageInfoComponent, [i5.HttpService, i2.ActivatedRoute], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_MessageInfoComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-message-info", [], null, null, null, View_MessageInfoComponent_0, RenderType_MessageInfoComponent)), i1.ɵdid(1, 114688, null, 0, i4.MessageInfoComponent, [i5.HttpService, i2.ActivatedRoute, i6.MemberService], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_MessageInfoComponent_Host_0 = View_MessageInfoComponent_Host_0;
 var MessageInfoComponentNgFactory = i1.ɵccf("app-message-info", i4.MessageInfoComponent, View_MessageInfoComponent_Host_0, {}, {}, []);
 exports.MessageInfoComponentNgFactory = MessageInfoComponentNgFactory;
@@ -14742,10 +14743,12 @@ var core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var http_service_1 = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
 var Config = __webpack_require__(/*! ../../models/config.model */ "./src/app/models/config.model.ts");
 var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router"); //接收route para
+var member_service_1 = __webpack_require__(/*! ../../member/member.service */ "./src/app/member/member.service.ts");
 var MessageInfoComponent = /** @class */ (function () {
-    function MessageInfoComponent(httpService, route) {
+    function MessageInfoComponent(httpService, route, memberService) {
         this.httpService = httpService;
         this.route = route;
+        this.memberService = memberService;
     }
     MessageInfoComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -14754,7 +14757,10 @@ var MessageInfoComponent = /** @class */ (function () {
     MessageInfoComponent.prototype.getMail = function (id) {
         var _this = this;
         var url = Config.APIUrl + "/api/member/mail/show?id=" + id;
-        this.httpService.getHttp(url).subscribe(function (res) { return _this.mail = res; });
+        this.httpService.getHttp(url).subscribe(function (res) {
+            _this.mail = res;
+            _this.memberService.mailReadCount();
+        });
     };
     return MessageInfoComponent;
 }());

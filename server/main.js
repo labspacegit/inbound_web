@@ -21765,6 +21765,7 @@ var ProductComponent = /** @class */ (function () {
         var url = Config.APIUrl + "/api/shop/product/sliders?id=" + id;
         this.httpService.getHttp(url).subscribe(function (res) {
             _this.sliders = res.sliders;
+            _this.galleryImages = [];
             Object.keys(_this.sliders).map(function (key) {
                 var slider = {
                     small: "" + Config.FileUrl + _this.sliders[key].filepath,

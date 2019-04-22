@@ -32,6 +32,17 @@
 		}
 	}
 }
+// 連結顏色
+@each $color, $value in $theme-colors {
+  .content-detail-#{$color} {
+    a{
+    	color: #{$value} !important;
+    	&:hover{
+    		text-decoration: underline !important;
+    	}
+    }
+  }
+}
 
 // 客制頁面
 .content-page{
